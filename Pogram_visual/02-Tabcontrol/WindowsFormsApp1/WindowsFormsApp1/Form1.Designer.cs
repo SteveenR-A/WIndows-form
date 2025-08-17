@@ -83,18 +83,19 @@
             // boton
             // 
             this.boton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.boton.Location = new System.Drawing.Point(98, 212);
+            this.boton.Location = new System.Drawing.Point(95, 257);
             this.boton.Name = "boton";
             this.boton.Size = new System.Drawing.Size(81, 27);
             this.boton.TabIndex = 5;
             this.boton.Text = "Calcular";
             this.boton.UseVisualStyleBackColor = false;
+            this.boton.Click += new System.EventHandler(this.boton_Click);
             // 
             // Altura1
             // 
             this.Altura1.AutoSize = true;
             this.Altura1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.Altura1.Location = new System.Drawing.Point(33, 162);
+            this.Altura1.Location = new System.Drawing.Point(30, 136);
             this.Altura1.Name = "Altura1";
             this.Altura1.Size = new System.Drawing.Size(34, 13);
             this.Altura1.TabIndex = 4;
@@ -104,7 +105,7 @@
             // 
             this.Peso2.AutoSize = true;
             this.Peso2.BackColor = System.Drawing.Color.SteelBlue;
-            this.Peso2.Location = new System.Drawing.Point(33, 113);
+            this.Peso2.Location = new System.Drawing.Point(33, 84);
             this.Peso2.Name = "Peso2";
             this.Peso2.Size = new System.Drawing.Size(31, 13);
             this.Peso2.TabIndex = 3;
@@ -113,7 +114,7 @@
             // altura
             // 
             this.altura.BackColor = System.Drawing.SystemColors.Window;
-            this.altura.Location = new System.Drawing.Point(98, 159);
+            this.altura.Location = new System.Drawing.Point(95, 133);
             this.altura.Name = "altura";
             this.altura.Size = new System.Drawing.Size(81, 20);
             this.altura.TabIndex = 2;
@@ -121,7 +122,7 @@
             // Peso
             // 
             this.Peso.BackColor = System.Drawing.SystemColors.Window;
-            this.Peso.Location = new System.Drawing.Point(98, 113);
+            this.Peso.Location = new System.Drawing.Point(95, 84);
             this.Peso.Name = "Peso";
             this.Peso.Size = new System.Drawing.Size(80, 20);
             this.Peso.TabIndex = 1;
@@ -129,10 +130,10 @@
             // IMC
             // 
             this.IMC.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.IMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.IMC.Location = new System.Drawing.Point(98, 44);
+            this.IMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.IMC.Location = new System.Drawing.Point(110, 35);
             this.IMC.Name = "IMC";
-            this.IMC.Size = new System.Drawing.Size(40, 27);
+            this.IMC.Size = new System.Drawing.Size(37, 26);
             this.IMC.TabIndex = 0;
             this.IMC.Text = "IMC";
             // 
@@ -207,6 +208,7 @@
             this.boton_grados.TabIndex = 0;
             this.boton_grados.Text = "Convertir";
             this.boton_grados.UseVisualStyleBackColor = false;
+            this.boton_grados.Click += new System.EventHandler(this.boton_grados_Click);
             // 
             // tabPage3
             // 
@@ -222,20 +224,22 @@
             // l_count
             // 
             this.l_count.BackColor = System.Drawing.Color.PowderBlue;
-            this.l_count.Location = new System.Drawing.Point(78, 83);
+            this.l_count.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.l_count.Location = new System.Drawing.Point(108, 86);
             this.l_count.Name = "l_count";
-            this.l_count.Size = new System.Drawing.Size(79, 26);
+            this.l_count.Size = new System.Drawing.Size(48, 26);
             this.l_count.TabIndex = 1;
             // 
             // b_count
             // 
             this.b_count.BackColor = System.Drawing.Color.PowderBlue;
-            this.b_count.Location = new System.Drawing.Point(78, 183);
+            this.b_count.Location = new System.Drawing.Point(92, 182);
             this.b_count.Name = "b_count";
-            this.b_count.Size = new System.Drawing.Size(79, 27);
+            this.b_count.Size = new System.Drawing.Size(79, 26);
             this.b_count.TabIndex = 0;
             this.b_count.Text = "Precionar";
             this.b_count.UseVisualStyleBackColor = false;
+            this.b_count.Click += new System.EventHandler(this.b_count_Click);
             // 
             // Form1
             // 
@@ -253,7 +257,6 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         #endregion
