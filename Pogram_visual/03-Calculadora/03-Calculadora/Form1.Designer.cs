@@ -360,7 +360,7 @@ partial class Form1
         button30.Name = "button30";
         button30.Size = new System.Drawing.Size(43, 34);
         button30.TabIndex = 30;
-        button30.Text = "ON";
+        button30.Text = "HW";
         button30.UseVisualStyleBackColor = false;
         // 
         // label1
