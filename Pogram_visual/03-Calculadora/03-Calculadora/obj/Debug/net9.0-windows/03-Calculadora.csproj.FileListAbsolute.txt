@@ -1,0 +1,15 @@
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\03-Calculadora\03-Calculadora\bin\Debug\net9.0-windows\03-Calculadora.exe
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\03-Calculadora\03-Calculadora\bin\Debug\net9.0-windows\03-Calculadora.deps.json
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\03-Calculadora\03-Calculadora\bin\Debug\net9.0-windows\03-Calculadora.runtimeconfig.json
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\03-Calculadora\03-Calculadora\bin\Debug\net9.0-windows\03-Calculadora.dll
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\03-Calculadora\03-Calculadora\bin\Debug\net9.0-windows\03-Calculadora.pdb
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\03-Calculadora\03-Calculadora\obj\Debug\net9.0-windows\03-Calculadora.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\03-Calculadora\03-Calculadora\obj\Debug\net9.0-windows\03-Calculadora.AssemblyInfoInputs.cache
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\03-Calculadora\03-Calculadora\obj\Debug\net9.0-windows\03-Calculadora.AssemblyInfo.cs
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\03-Calculadora\03-Calculadora\obj\Debug\net9.0-windows\03-Calculadora.csproj.CoreCompileInputs.cache
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\03-Calculadora\03-Calculadora\obj\Debug\net9.0-windows\03-Calculadora.sourcelink.json
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\03-Calculadora\03-Calculadora\obj\Debug\net9.0-windows\03-Calculadora.dll
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\03-Calculadora\03-Calculadora\obj\Debug\net9.0-windows\refint\03-Calculadora.dll
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\03-Calculadora\03-Calculadora\obj\Debug\net9.0-windows\03-Calculadora.pdb
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\03-Calculadora\03-Calculadora\obj\Debug\net9.0-windows\03-Calculadora.genruntimeconfig.cache
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\03-Calculadora\03-Calculadora\obj\Debug\net9.0-windows\ref\03-Calculadora.dll

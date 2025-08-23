@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oAXK3Lydikw=",
+  "dgSpecHash": "XhFcCWkgbeU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\herna\\RiderProjects\\03-Calculadora\\03-Calculadora\\03-Calculadora.csproj",
+  "projectFilePath": "C:\\Users\\herna\\RiderProjects\\Programacion_visual\\Pogram_visual\\03-Calculadora\\03-Calculadora\\03-Calculadora.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\herna\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.5\\microsoft.netcore.app.ref.9.0.5.nupkg.sha512",
     "C:\\Users\\herna\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.5\\microsoft.windowsdesktop.app.ref.9.0.5.nupkg.sha512",

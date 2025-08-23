@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\herna\\RiderProjects\\03-Calculadora\\03-Calculadora\\03-Calculadora.csproj": {}
+    "C:\\Users\\herna\\RiderProjects\\Programacion_visual\\Pogram_visual\\03-Calculadora\\03-Calculadora\\03-Calculadora.csproj": {}
   },
   "projects": {
-    "C:\\Users\\herna\\RiderProjects\\03-Calculadora\\03-Calculadora\\03-Calculadora.csproj": {
+    "C:\\Users\\herna\\RiderProjects\\Programacion_visual\\Pogram_visual\\03-Calculadora\\03-Calculadora\\03-Calculadora.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\herna\\RiderProjects\\03-Calculadora\\03-Calculadora\\03-Calculadora.csproj",
+        "projectUniqueName": "C:\\Users\\herna\\RiderProjects\\Programacion_visual\\Pogram_visual\\03-Calculadora\\03-Calculadora\\03-Calculadora.csproj",
         "projectName": "03-Calculadora",
-        "projectPath": "C:\\Users\\herna\\RiderProjects\\03-Calculadora\\03-Calculadora\\03-Calculadora.csproj",
+        "projectPath": "C:\\Users\\herna\\RiderProjects\\Programacion_visual\\Pogram_visual\\03-Calculadora\\03-Calculadora\\03-Calculadora.csproj",
         "packagesPath": "C:\\Users\\herna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\herna\\RiderProjects\\03-Calculadora\\03-Calculadora\\obj\\",
+        "outputPath": "C:\\Users\\herna\\RiderProjects\\Programacion_visual\\Pogram_visual\\03-Calculadora\\03-Calculadora\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
