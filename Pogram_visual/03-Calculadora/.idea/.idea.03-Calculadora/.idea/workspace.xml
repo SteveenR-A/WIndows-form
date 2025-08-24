@@ -8,17 +8,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="859289af-9899-43c3-ae25-ef7811303344" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.03-Calculadora/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.03-Calculadora/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03-Calculadora/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/Form1.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03-Calculadora/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/03-Calculadora.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/03-Calculadora.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.dll" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.exe" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.dll" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/ref/03-Calculadora.dll" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/ref/03-Calculadora.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/refint/03-Calculadora.dll" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/refint/03-Calculadora.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +43,10 @@
     "accountId": "d324ca22-3789-4116-8412-ae88645e72d6"
   }
 }]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/herna/RiderProjects/Programacion_visual/Pogram_visual/03-Calculadora/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
   "associatedIndex": 2
@@ -51,7 +58,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Project.03-Calculadora.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -96,16 +105,37 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1755990631884</updated>
-      <workItem from="1755990634995" duration="2233000" />
+      <workItem from="1755990634995" duration="4313000" />
     </task>
+    <task id="LOCAL-00001" summary="diseno calculadora">
+      <option name="closed" value="true" />
+      <created>1755992926746</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1755992926746</updated>
+    </task>
+    <task id="LOCAL-00002" summary="01-D">
+      <option name="closed" value="true" />
+      <created>1755993050177</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1755993050177</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="diseno calculadora" />
+    <MESSAGE value="01-D" />
+    <option name="LAST_COMMIT_MESSAGE" value="01-D" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

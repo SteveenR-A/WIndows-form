@@ -29,339 +29,218 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
-        button1 = new System.Windows.Forms.Button();
-        button2 = new System.Windows.Forms.Button();
-        button3 = new System.Windows.Forms.Button();
-        button5 = new System.Windows.Forms.Button();
-        button6 = new System.Windows.Forms.Button();
-        button7 = new System.Windows.Forms.Button();
-        button8 = new System.Windows.Forms.Button();
-        button9 = new System.Windows.Forms.Button();
-        button10 = new System.Windows.Forms.Button();
-        button11 = new System.Windows.Forms.Button();
-        button12 = new System.Windows.Forms.Button();
-        button13 = new System.Windows.Forms.Button();
-        button14 = new System.Windows.Forms.Button();
-        button15 = new System.Windows.Forms.Button();
-        button16 = new System.Windows.Forms.Button();
-        button17 = new System.Windows.Forms.Button();
-        button18 = new System.Windows.Forms.Button();
-        button19 = new System.Windows.Forms.Button();
-        button4 = new System.Windows.Forms.Button();
-        button20 = new System.Windows.Forms.Button();
-        button21 = new System.Windows.Forms.Button();
-        button22 = new System.Windows.Forms.Button();
-        button23 = new System.Windows.Forms.Button();
-        button24 = new System.Windows.Forms.Button();
-        button25 = new System.Windows.Forms.Button();
-        button26 = new System.Windows.Forms.Button();
-        button27 = new System.Windows.Forms.Button();
-        button28 = new System.Windows.Forms.Button();
-        button29 = new System.Windows.Forms.Button();
-        button30 = new System.Windows.Forms.Button();
+        b_num7 = new System.Windows.Forms.Button();
+        b_num4 = new System.Windows.Forms.Button();
+        b_num1 = new System.Windows.Forms.Button();
+        b_num8 = new System.Windows.Forms.Button();
+        b_num5 = new System.Windows.Forms.Button();
+        b_num2 = new System.Windows.Forms.Button();
+        b_num0 = new System.Windows.Forms.Button();
+        b_num9 = new System.Windows.Forms.Button();
+        b_num6 = new System.Windows.Forms.Button();
+        b_num3 = new System.Windows.Forms.Button();
+        b_punto = new System.Windows.Forms.Button();
+        b_borrar = new System.Windows.Forms.Button();
+        b_limpiar = new System.Windows.Forms.Button();
+        b_igual = new System.Windows.Forms.Button();
+        b_multiplicar = new System.Windows.Forms.Button();
+        b_dividir = new System.Windows.Forms.Button();
+        b_restar = new System.Windows.Forms.Button();
+        b_sumar = new System.Windows.Forms.Button();
         label1 = new System.Windows.Forms.Label();
+        b_hw = new System.Windows.Forms.Button();
+        b_log = new System.Windows.Forms.Button();
+        b_pi = new System.Windows.Forms.Button();
+        b_raiz = new System.Windows.Forms.Button();
+        b_potencia = new System.Windows.Forms.Button();
+        b_parentesis_izq = new System.Windows.Forms.Button();
+        b_parentesis_der = new System.Windows.Forms.Button();
+        b_off = new System.Windows.Forms.Button();
+        b_mem_mas = new System.Windows.Forms.Button();
+        b_mem_menos = new System.Windows.Forms.Button();
+        b_mem_clear = new System.Windows.Forms.Button();
+        b_mem_recall = new System.Windows.Forms.Button();
         SuspendLayout();
         // 
-        // button1
+        // b_num7
         // 
-        button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button1.Location = new System.Drawing.Point(40, 230);
-        button1.Name = "button1";
-        button1.Size = new System.Drawing.Size(43, 34);
-        button1.TabIndex = 0;
-        button1.Text = "7";
-        button1.UseVisualStyleBackColor = false;
+        b_num7.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_num7.Location = new System.Drawing.Point(40, 230);
+        b_num7.Name = "b_num7";
+        b_num7.Size = new System.Drawing.Size(43, 34);
+        b_num7.TabIndex = 0;
+        b_num7.Text = "7";
+        b_num7.UseVisualStyleBackColor = false;
         // 
-        // button2
+        // b_num4
         // 
-        button2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button2.Location = new System.Drawing.Point(40, 270);
-        button2.Name = "button2";
-        button2.Size = new System.Drawing.Size(43, 34);
-        button2.TabIndex = 1;
-        button2.Text = "4";
-        button2.UseVisualStyleBackColor = false;
+        b_num4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_num4.Location = new System.Drawing.Point(40, 270);
+        b_num4.Name = "b_num4";
+        b_num4.Size = new System.Drawing.Size(43, 34);
+        b_num4.TabIndex = 1;
+        b_num4.Text = "4";
+        b_num4.UseVisualStyleBackColor = false;
         // 
-        // button3
+        // b_num1
         // 
-        button3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button3.Location = new System.Drawing.Point(40, 310);
-        button3.Name = "button3";
-        button3.Size = new System.Drawing.Size(43, 34);
-        button3.TabIndex = 2;
-        button3.Text = "1";
-        button3.UseVisualStyleBackColor = false;
+        b_num1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_num1.Location = new System.Drawing.Point(40, 310);
+        b_num1.Name = "b_num1";
+        b_num1.Size = new System.Drawing.Size(43, 34);
+        b_num1.TabIndex = 2;
+        b_num1.Text = "1";
+        b_num1.UseVisualStyleBackColor = false;
         // 
-        // button5
+        // b_num8
         // 
-        button5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button5.Location = new System.Drawing.Point(89, 230);
-        button5.Name = "button5";
-        button5.Size = new System.Drawing.Size(43, 34);
-        button5.TabIndex = 4;
-        button5.Text = "8";
-        button5.UseVisualStyleBackColor = false;
+        b_num8.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_num8.Location = new System.Drawing.Point(89, 230);
+        b_num8.Name = "b_num8";
+        b_num8.Size = new System.Drawing.Size(43, 34);
+        b_num8.TabIndex = 4;
+        b_num8.Text = "8";
+        b_num8.UseVisualStyleBackColor = false;
         // 
-        // button6
+        // b_num5
         // 
-        button6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button6.Location = new System.Drawing.Point(89, 270);
-        button6.Name = "button6";
-        button6.Size = new System.Drawing.Size(43, 34);
-        button6.TabIndex = 5;
-        button6.Text = "5";
-        button6.UseVisualStyleBackColor = false;
+        b_num5.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_num5.Location = new System.Drawing.Point(89, 270);
+        b_num5.Name = "b_num5";
+        b_num5.Size = new System.Drawing.Size(43, 34);
+        b_num5.TabIndex = 5;
+        b_num5.Text = "5";
+        b_num5.UseVisualStyleBackColor = false;
         // 
-        // button7
+        // b_num2
         // 
-        button7.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button7.Location = new System.Drawing.Point(89, 310);
-        button7.Name = "button7";
-        button7.Size = new System.Drawing.Size(43, 34);
-        button7.TabIndex = 6;
-        button7.Text = "2";
-        button7.UseVisualStyleBackColor = false;
+        b_num2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_num2.Location = new System.Drawing.Point(89, 310);
+        b_num2.Name = "b_num2";
+        b_num2.Size = new System.Drawing.Size(43, 34);
+        b_num2.TabIndex = 6;
+        b_num2.Text = "2";
+        b_num2.UseVisualStyleBackColor = false;
         // 
-        // button8
+        // b_num0
         // 
-        button8.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button8.Location = new System.Drawing.Point(40, 350);
-        button8.Name = "button8";
-        button8.Size = new System.Drawing.Size(92, 34);
-        button8.TabIndex = 7;
-        button8.Text = "0";
-        button8.UseVisualStyleBackColor = false;
+        b_num0.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_num0.Location = new System.Drawing.Point(40, 350);
+        b_num0.Name = "b_num0";
+        b_num0.Size = new System.Drawing.Size(92, 34);
+        b_num0.TabIndex = 7;
+        b_num0.Text = "0";
+        b_num0.UseVisualStyleBackColor = false;
         // 
-        // button9
+        // b_num9
         // 
-        button9.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button9.Location = new System.Drawing.Point(138, 230);
-        button9.Name = "button9";
-        button9.Size = new System.Drawing.Size(43, 34);
-        button9.TabIndex = 8;
-        button9.Text = "9";
-        button9.UseVisualStyleBackColor = false;
+        b_num9.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_num9.Location = new System.Drawing.Point(138, 230);
+        b_num9.Name = "b_num9";
+        b_num9.Size = new System.Drawing.Size(43, 34);
+        b_num9.TabIndex = 8;
+        b_num9.Text = "9";
+        b_num9.UseVisualStyleBackColor = false;
         // 
-        // button10
+        // b_num6
         // 
-        button10.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button10.Location = new System.Drawing.Point(138, 270);
-        button10.Name = "button10";
-        button10.Size = new System.Drawing.Size(43, 34);
-        button10.TabIndex = 9;
-        button10.Text = "6";
-        button10.UseVisualStyleBackColor = false;
+        b_num6.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_num6.Location = new System.Drawing.Point(138, 270);
+        b_num6.Name = "b_num6";
+        b_num6.Size = new System.Drawing.Size(43, 34);
+        b_num6.TabIndex = 9;
+        b_num6.Text = "6";
+        b_num6.UseVisualStyleBackColor = false;
         // 
-        // button11
+        // b_num3
         // 
-        button11.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button11.Location = new System.Drawing.Point(138, 310);
-        button11.Name = "button11";
-        button11.Size = new System.Drawing.Size(43, 34);
-        button11.TabIndex = 10;
-        button11.Text = "3";
-        button11.UseVisualStyleBackColor = false;
+        b_num3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_num3.Location = new System.Drawing.Point(138, 310);
+        b_num3.Name = "b_num3";
+        b_num3.Size = new System.Drawing.Size(43, 34);
+        b_num3.TabIndex = 10;
+        b_num3.Text = "3";
+        b_num3.UseVisualStyleBackColor = false;
         // 
-        // button12
+        // b_punto
         // 
-        button12.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button12.Location = new System.Drawing.Point(138, 350);
-        button12.Name = "button12";
-        button12.Size = new System.Drawing.Size(43, 34);
-        button12.TabIndex = 11;
-        button12.Text = ".";
-        button12.UseVisualStyleBackColor = false;
+        b_punto.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_punto.Location = new System.Drawing.Point(138, 350);
+        b_punto.Name = "b_punto";
+        b_punto.Size = new System.Drawing.Size(43, 34);
+        b_punto.TabIndex = 11;
+        b_punto.Text = ".";
+        b_punto.UseVisualStyleBackColor = false;
         // 
-        // button13
+        // b_borrar
         // 
-        button13.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button13.Location = new System.Drawing.Point(187, 350);
-        button13.Name = "button13";
-        button13.Size = new System.Drawing.Size(43, 34);
-        button13.TabIndex = 12;
-        button13.Text = "BA";
-        button13.UseVisualStyleBackColor = false;
+        b_borrar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_borrar.Location = new System.Drawing.Point(187, 350);
+        b_borrar.Name = "b_borrar";
+        b_borrar.Size = new System.Drawing.Size(43, 34);
+        b_borrar.TabIndex = 12;
+        b_borrar.Text = "BA";
+        b_borrar.UseVisualStyleBackColor = false;
         // 
-        // button14
+        // b_limpiar
         // 
-        button14.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button14.Location = new System.Drawing.Point(187, 310);
-        button14.Name = "button14";
-        button14.Size = new System.Drawing.Size(43, 34);
-        button14.TabIndex = 13;
-        button14.Text = "CE";
-        button14.UseVisualStyleBackColor = false;
+        b_limpiar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_limpiar.Location = new System.Drawing.Point(187, 310);
+        b_limpiar.Name = "b_limpiar";
+        b_limpiar.Size = new System.Drawing.Size(43, 34);
+        b_limpiar.TabIndex = 13;
+        b_limpiar.Text = "CE";
+        b_limpiar.UseVisualStyleBackColor = false;
         // 
-        // button15
+        // b_igual
         // 
-        button15.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button15.Location = new System.Drawing.Point(236, 310);
-        button15.Name = "button15";
-        button15.Size = new System.Drawing.Size(43, 74);
-        button15.TabIndex = 14;
-        button15.Text = "=";
-        button15.UseVisualStyleBackColor = false;
+        b_igual.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_igual.Location = new System.Drawing.Point(236, 310);
+        b_igual.Name = "b_igual";
+        b_igual.Size = new System.Drawing.Size(43, 74);
+        b_igual.TabIndex = 14;
+        b_igual.Text = "=";
+        b_igual.UseVisualStyleBackColor = false;
         // 
-        // button16
+        // b_multiplicar
         // 
-        button16.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button16.Location = new System.Drawing.Point(187, 230);
-        button16.Name = "button16";
-        button16.Size = new System.Drawing.Size(43, 34);
-        button16.TabIndex = 15;
-        button16.Text = "*";
-        button16.UseVisualStyleBackColor = false;
+        b_multiplicar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_multiplicar.Location = new System.Drawing.Point(187, 230);
+        b_multiplicar.Name = "b_multiplicar";
+        b_multiplicar.Size = new System.Drawing.Size(43, 34);
+        b_multiplicar.TabIndex = 15;
+        b_multiplicar.Text = "*";
+        b_multiplicar.UseVisualStyleBackColor = false;
         // 
-        // button17
+        // b_dividir
         // 
-        button17.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button17.Location = new System.Drawing.Point(187, 270);
-        button17.Name = "button17";
-        button17.Size = new System.Drawing.Size(43, 34);
-        button17.TabIndex = 16;
-        button17.Text = "/";
-        button17.UseVisualStyleBackColor = false;
+        b_dividir.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_dividir.Location = new System.Drawing.Point(187, 270);
+        b_dividir.Name = "b_dividir";
+        b_dividir.Size = new System.Drawing.Size(43, 34);
+        b_dividir.TabIndex = 16;
+        b_dividir.Text = "/";
+        b_dividir.UseVisualStyleBackColor = false;
         // 
-        // button18
+        // b_restar
         // 
-        button18.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button18.Location = new System.Drawing.Point(236, 230);
-        button18.Name = "button18";
-        button18.Size = new System.Drawing.Size(43, 34);
-        button18.TabIndex = 17;
-        button18.Text = "-";
-        button18.UseVisualStyleBackColor = false;
+        b_restar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_restar.Location = new System.Drawing.Point(236, 230);
+        b_restar.Name = "b_restar";
+        b_restar.Size = new System.Drawing.Size(43, 34);
+        b_restar.TabIndex = 17;
+        b_restar.Text = "-";
+        b_restar.UseVisualStyleBackColor = false;
         // 
-        // button19
+        // b_sumar
         // 
-        button19.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button19.Location = new System.Drawing.Point(236, 270);
-        button19.Name = "button19";
-        button19.Size = new System.Drawing.Size(43, 34);
-        button19.TabIndex = 18;
-        button19.Text = "+";
-        button19.UseVisualStyleBackColor = false;
-        // 
-        // button4
-        // 
-        button4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button4.Location = new System.Drawing.Point(40, 190);
-        button4.Name = "button4";
-        button4.Size = new System.Drawing.Size(43, 34);
-        button4.TabIndex = 19;
-        button4.Text = "M+";
-        button4.UseVisualStyleBackColor = false;
-        // 
-        // button20
-        // 
-        button20.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button20.Location = new System.Drawing.Point(89, 190);
-        button20.Name = "button20";
-        button20.Size = new System.Drawing.Size(43, 34);
-        button20.TabIndex = 20;
-        button20.Text = "M-";
-        button20.UseVisualStyleBackColor = false;
-        // 
-        // button21
-        // 
-        button21.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button21.Location = new System.Drawing.Point(138, 190);
-        button21.Name = "button21";
-        button21.Size = new System.Drawing.Size(43, 34);
-        button21.TabIndex = 21;
-        button21.Text = "MC";
-        button21.UseVisualStyleBackColor = false;
-        // 
-        // button22
-        // 
-        button22.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button22.Location = new System.Drawing.Point(187, 190);
-        button22.Name = "button22";
-        button22.Size = new System.Drawing.Size(43, 34);
-        button22.TabIndex = 22;
-        button22.Text = "MR";
-        button22.UseVisualStyleBackColor = false;
-        // 
-        // button23
-        // 
-        button23.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button23.Location = new System.Drawing.Point(40, 150);
-        button23.Name = "button23";
-        button23.Size = new System.Drawing.Size(43, 34);
-        button23.TabIndex = 23;
-        button23.Text = "Log ";
-        button23.UseVisualStyleBackColor = false;
-        // 
-        // button24
-        // 
-        button24.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button24.Location = new System.Drawing.Point(89, 150);
-        button24.Name = "button24";
-        button24.Size = new System.Drawing.Size(43, 34);
-        button24.TabIndex = 24;
-        button24.Text = "π";
-        button24.UseVisualStyleBackColor = false;
-        // 
-        // button25
-        // 
-        button25.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button25.Location = new System.Drawing.Point(138, 150);
-        button25.Name = "button25";
-        button25.Size = new System.Drawing.Size(43, 34);
-        button25.TabIndex = 25;
-        button25.Text = "√";
-        button25.UseVisualStyleBackColor = false;
-        // 
-        // button26
-        // 
-        button26.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button26.Location = new System.Drawing.Point(187, 150);
-        button26.Name = "button26";
-        button26.Size = new System.Drawing.Size(43, 34);
-        button26.TabIndex = 26;
-        button26.Text = "^";
-        button26.UseVisualStyleBackColor = false;
-        // 
-        // button27
-        // 
-        button27.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button27.Location = new System.Drawing.Point(236, 190);
-        button27.Name = "button27";
-        button27.Size = new System.Drawing.Size(43, 34);
-        button27.TabIndex = 27;
-        button27.Text = ")";
-        button27.UseVisualStyleBackColor = false;
-        button27.Click += button27_Click;
-        // 
-        // button28
-        // 
-        button28.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button28.Location = new System.Drawing.Point(236, 150);
-        button28.Name = "button28";
-        button28.Size = new System.Drawing.Size(43, 34);
-        button28.TabIndex = 28;
-        button28.Text = "(";
-        button28.UseVisualStyleBackColor = false;
-        // 
-        // button29
-        // 
-        button29.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button29.Location = new System.Drawing.Point(236, 110);
-        button29.Name = "button29";
-        button29.Size = new System.Drawing.Size(43, 34);
-        button29.TabIndex = 29;
-        button29.Text = "OFF";
-        button29.UseVisualStyleBackColor = false;
-        // 
-        // button30
-        // 
-        button30.BackColor = System.Drawing.SystemColors.ActiveBorder;
-        button30.Location = new System.Drawing.Point(40, 110);
-        button30.Name = "button30";
-        button30.Size = new System.Drawing.Size(43, 34);
-        button30.TabIndex = 30;
-        button30.Text = "HW";
-        button30.UseVisualStyleBackColor = false;
+        b_sumar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_sumar.Location = new System.Drawing.Point(236, 270);
+        b_sumar.Name = "b_sumar";
+        b_sumar.Size = new System.Drawing.Size(43, 34);
+        b_sumar.TabIndex = 18;
+        b_sumar.Text = "+";
+        b_sumar.UseVisualStyleBackColor = false;
         // 
         // label1
         // 
@@ -371,6 +250,124 @@ partial class Form1
         label1.Size = new System.Drawing.Size(214, 41);
         label1.TabIndex = 31;
         // 
+        // b_hw
+        // 
+        b_hw.Location = new System.Drawing.Point(40, 116);
+        b_hw.Name = "b_hw";
+        b_hw.Size = new System.Drawing.Size(43, 23);
+        b_hw.TabIndex = 32;
+        b_hw.Text = "HW";
+        // 
+        // b_log
+        // 
+        b_log.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_log.Location = new System.Drawing.Point(40, 150);
+        b_log.Name = "b_log";
+        b_log.Size = new System.Drawing.Size(43, 34);
+        b_log.TabIndex = 23;
+        b_log.Text = "Log";
+        b_log.UseVisualStyleBackColor = false;
+        // 
+        // b_pi
+        // 
+        b_pi.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_pi.Location = new System.Drawing.Point(89, 150);
+        b_pi.Name = "b_pi";
+        b_pi.Size = new System.Drawing.Size(43, 34);
+        b_pi.TabIndex = 24;
+        b_pi.Text = "π";
+        b_pi.UseVisualStyleBackColor = false;
+        // 
+        // b_raiz
+        // 
+        b_raiz.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_raiz.Location = new System.Drawing.Point(138, 150);
+        b_raiz.Name = "b_raiz";
+        b_raiz.Size = new System.Drawing.Size(43, 34);
+        b_raiz.TabIndex = 25;
+        b_raiz.Text = "√";
+        b_raiz.UseVisualStyleBackColor = false;
+        // 
+        // b_potencia
+        // 
+        b_potencia.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_potencia.Location = new System.Drawing.Point(187, 150);
+        b_potencia.Name = "b_potencia";
+        b_potencia.Size = new System.Drawing.Size(43, 34);
+        b_potencia.TabIndex = 26;
+        b_potencia.Text = "^";
+        b_potencia.UseVisualStyleBackColor = false;
+        // 
+        // b_parentesis_izq
+        // 
+        b_parentesis_izq.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_parentesis_izq.Location = new System.Drawing.Point(236, 150);
+        b_parentesis_izq.Name = "b_parentesis_izq";
+        b_parentesis_izq.Size = new System.Drawing.Size(43, 34);
+        b_parentesis_izq.TabIndex = 28;
+        b_parentesis_izq.Text = "(";
+        b_parentesis_izq.UseVisualStyleBackColor = false;
+        // 
+        // b_parentesis_der
+        // 
+        b_parentesis_der.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_parentesis_der.Location = new System.Drawing.Point(236, 190);
+        b_parentesis_der.Name = "b_parentesis_der";
+        b_parentesis_der.Size = new System.Drawing.Size(43, 34);
+        b_parentesis_der.TabIndex = 27;
+        b_parentesis_der.Text = ")";
+        b_parentesis_der.UseVisualStyleBackColor = false;
+        // 
+        // b_off
+        // 
+        b_off.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_off.Location = new System.Drawing.Point(236, 110);
+        b_off.Name = "b_off";
+        b_off.Size = new System.Drawing.Size(43, 34);
+        b_off.TabIndex = 29;
+        b_off.Text = "OFF";
+        b_off.UseVisualStyleBackColor = false;
+        // 
+        // b_mem_mas
+        // 
+        b_mem_mas.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_mem_mas.Location = new System.Drawing.Point(40, 190);
+        b_mem_mas.Name = "b_mem_mas";
+        b_mem_mas.Size = new System.Drawing.Size(43, 34);
+        b_mem_mas.TabIndex = 19;
+        b_mem_mas.Text = "M+";
+        b_mem_mas.UseVisualStyleBackColor = false;
+        // 
+        // b_mem_menos
+        // 
+        b_mem_menos.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_mem_menos.Location = new System.Drawing.Point(89, 190);
+        b_mem_menos.Name = "b_mem_menos";
+        b_mem_menos.Size = new System.Drawing.Size(43, 34);
+        b_mem_menos.TabIndex = 20;
+        b_mem_menos.Text = "M-";
+        b_mem_menos.UseVisualStyleBackColor = false;
+        // 
+        // b_mem_clear
+        // 
+        b_mem_clear.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_mem_clear.Location = new System.Drawing.Point(138, 190);
+        b_mem_clear.Name = "b_mem_clear";
+        b_mem_clear.Size = new System.Drawing.Size(43, 34);
+        b_mem_clear.TabIndex = 21;
+        b_mem_clear.Text = "MC";
+        b_mem_clear.UseVisualStyleBackColor = false;
+        // 
+        // b_mem_recall
+        // 
+        b_mem_recall.BackColor = System.Drawing.SystemColors.ActiveBorder;
+        b_mem_recall.Location = new System.Drawing.Point(187, 190);
+        b_mem_recall.Name = "b_mem_recall";
+        b_mem_recall.Size = new System.Drawing.Size(43, 34);
+        b_mem_recall.TabIndex = 22;
+        b_mem_recall.Text = "MR";
+        b_mem_recall.UseVisualStyleBackColor = false;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -378,36 +375,36 @@ partial class Form1
         BackColor = System.Drawing.SystemColors.ButtonFace;
         ClientSize = new System.Drawing.Size(313, 450);
         Controls.Add(label1);
-        Controls.Add(button30);
-        Controls.Add(button29);
-        Controls.Add(button28);
-        Controls.Add(button27);
-        Controls.Add(button26);
-        Controls.Add(button25);
-        Controls.Add(button24);
-        Controls.Add(button23);
-        Controls.Add(button22);
-        Controls.Add(button21);
-        Controls.Add(button20);
-        Controls.Add(button4);
-        Controls.Add(button19);
-        Controls.Add(button18);
-        Controls.Add(button17);
-        Controls.Add(button16);
-        Controls.Add(button15);
-        Controls.Add(button14);
-        Controls.Add(button13);
-        Controls.Add(button12);
-        Controls.Add(button11);
-        Controls.Add(button10);
-        Controls.Add(button9);
-        Controls.Add(button8);
-        Controls.Add(button7);
-        Controls.Add(button6);
-        Controls.Add(button5);
-        Controls.Add(button3);
-        Controls.Add(button2);
-        Controls.Add(button1);
+        Controls.Add(b_hw);
+        Controls.Add(b_num7);
+        Controls.Add(b_num4);
+        Controls.Add(b_num1);
+        Controls.Add(b_num8);
+        Controls.Add(b_num5);
+        Controls.Add(b_num2);
+        Controls.Add(b_num0);
+        Controls.Add(b_num9);
+        Controls.Add(b_num6);
+        Controls.Add(b_num3);
+        Controls.Add(b_punto);
+        Controls.Add(b_borrar);
+        Controls.Add(b_limpiar);
+        Controls.Add(b_igual);
+        Controls.Add(b_multiplicar);
+        Controls.Add(b_dividir);
+        Controls.Add(b_restar);
+        Controls.Add(b_sumar);
+        Controls.Add(b_log);
+        Controls.Add(b_pi);
+        Controls.Add(b_raiz);
+        Controls.Add(b_potencia);
+        Controls.Add(b_parentesis_izq);
+        Controls.Add(b_parentesis_der);
+        Controls.Add(b_off);
+        Controls.Add(b_mem_mas);
+        Controls.Add(b_mem_menos);
+        Controls.Add(b_mem_clear);
+        Controls.Add(b_mem_recall);
         Text = "Form1";
         ResumeLayout(false);
     }
@@ -449,7 +446,37 @@ partial class Form1
     private System.Windows.Forms.Button button5;
     private System.Windows.Forms.Button button6;
 
-    private System.Windows.Forms.Button button1;
+    // Renombrar los botones descriptivos a prefijo b_ y su función
+    private System.Windows.Forms.Button b_num7;
+    private System.Windows.Forms.Button b_num4;
+    private System.Windows.Forms.Button b_num1;
+    private System.Windows.Forms.Button b_num8;
+    private System.Windows.Forms.Button b_num5;
+    private System.Windows.Forms.Button b_num2;
+    private System.Windows.Forms.Button b_num0;
+    private System.Windows.Forms.Button b_num9;
+    private System.Windows.Forms.Button b_num6;
+    private System.Windows.Forms.Button b_num3;
+    private System.Windows.Forms.Button b_punto;
+    private System.Windows.Forms.Button b_borrar;
+    private System.Windows.Forms.Button b_limpiar;
+    private System.Windows.Forms.Button b_igual;
+    private System.Windows.Forms.Button b_multiplicar;
+    private System.Windows.Forms.Button b_dividir;
+    private System.Windows.Forms.Button b_restar;
+    private System.Windows.Forms.Button b_sumar;
+    private System.Windows.Forms.Button b_hw;
+    private System.Windows.Forms.Button b_log;
+    private System.Windows.Forms.Button b_pi;
+    private System.Windows.Forms.Button b_raiz;
+    private System.Windows.Forms.Button b_potencia;
+    private System.Windows.Forms.Button b_parentesis_izq;
+    private System.Windows.Forms.Button b_parentesis_der;
+    private System.Windows.Forms.Button b_off;
+    private System.Windows.Forms.Button b_mem_mas;
+    private System.Windows.Forms.Button b_mem_menos;
+    private System.Windows.Forms.Button b_mem_clear;
+    private System.Windows.Forms.Button b_mem_recall;
 
     #endregion
 }
