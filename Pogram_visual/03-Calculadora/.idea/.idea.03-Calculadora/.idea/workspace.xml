@@ -7,7 +7,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="859289af-9899-43c3-ae25-ef7811303344" name="Changes" comment="" />
+    <list default="true" id="859289af-9899-43c3-ae25-ef7811303344" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.03-Calculadora/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.03-Calculadora/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/Form1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.dll" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.exe" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.dll" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/ref/03-Calculadora.dll" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/ref/03-Calculadora.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/refint/03-Calculadora.dll" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/refint/03-Calculadora.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/rider.project.model.nuget.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,48 +35,48 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "SteveenR-A"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SteveenR-A&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/SteveenR-A/Programacion_visual.git",
-    "accountId": "d324ca22-3789-4116-8412-ae88645e72d6"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SteveenR-A/Programacion_visual.git&quot;,
+    &quot;accountId&quot;: &quot;d324ca22-3789-4116-8412-ae88645e72d6&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/Users/herna/RiderProjects/Programacion_visual/Pogram_visual/03-Calculadora/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="31hyWOSX6FetMlY0ljxwsxTOrwH" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.03-Calculadora.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.03-Calculadora.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="03-Calculadora" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -93,7 +109,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1755990631884</updated>
-      <workItem from="1755990634995" duration="5058000" />
+      <workItem from="1755990634995" duration="5207000" />
+      <workItem from="1756130533820" duration="345000" />
+      <workItem from="1756214223291" duration="3044000" />
     </task>
     <task id="LOCAL-00001" summary="diseno calculadora">
       <option name="closed" value="true" />
@@ -119,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755995107865</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="001">
+      <option name="closed" value="true" />
+      <created>1755995903926</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1755995903926</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +158,8 @@
     <MESSAGE value="diseno calculadora" />
     <MESSAGE value="01-D" />
     <MESSAGE value="02-logica" />
-    <option name="LAST_COMMIT_MESSAGE" value="02-logica" />
+    <MESSAGE value="001" />
+    <option name="LAST_COMMIT_MESSAGE" value="001" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

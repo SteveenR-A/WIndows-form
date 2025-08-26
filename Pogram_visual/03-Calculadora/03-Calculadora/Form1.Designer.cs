@@ -256,7 +256,7 @@ partial class Form1
         b_hw.Name = "b_hw";
         b_hw.Size = new System.Drawing.Size(43, 23);
         b_hw.TabIndex = 32;
-        b_hw.Text = "HW";
+        b_hw.Text = "1 + 1";
         // 
         // b_log
         // 
@@ -373,7 +373,7 @@ partial class Form1
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.SystemColors.ButtonFace;
-        ClientSize = new System.Drawing.Size(313, 450);
+        ClientSize = new System.Drawing.Size(317, 450);
         Controls.Add(label1);
         Controls.Add(b_hw);
         Controls.Add(b_num7);

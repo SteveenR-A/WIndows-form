@@ -1,10 +1,11 @@
 namespace _03_Calculadora;
 
+
+using System.Data; // Para DataTable.Compute
+
 public partial class Form1 : Form
 {
-    private string operacion = "";
-    private double valor1 = 0;
-    private double valor2 = 0;
+    private string expresion = ""; // Guarda la expresión completa
     private bool nuevoNumero = true;
 
     // Variables para memoria
@@ -54,56 +55,65 @@ public partial class Form1 : Form
         label1.Text = "Hello World";
     }
 
+
     private void AgregarNumero(string num)
     {
         if (nuevoNumero || label1.Text == "0")
         {
             label1.Text = num;
+            expresion = num;
             nuevoNumero = false;
         }
         else
         {
             label1.Text += num;
+            expresion += num;
         }
     }
+
 
     private void AgregarPunto()
     {
         if (!label1.Text.Contains("."))
         {
             label1.Text += ".";
+            expresion += ".";
             nuevoNumero = false;
         }
     }
 
+
     private void Operar(string op)
     {
-        valor1 = double.TryParse(label1.Text, out var v) ? v : 0;
-        operacion = op;
-        nuevoNumero = true;
+        label1.Text += op;
+        expresion += op;
+        nuevoNumero = false;
     }
+
 
     private void Calcular()
     {
-        valor2 = double.TryParse(label1.Text, out var v) ? v : 0;
-        double resultado = 0;
-        switch (operacion)
+        try
         {
-            case "+": resultado = valor1 + valor2; break;
-            case "-": resultado = valor1 - valor2; break;
-            case "*": resultado = valor1 * valor2; break;
-            case "/": resultado = valor2 != 0 ? valor1 / valor2 : 0; break;
+            // Evaluar la expresión usando DataTable
+            var dt = new DataTable();
+            var valor = dt.Compute(expresion, "");
+            label1.Text = valor.ToString();
+            expresion = label1.Text;
         }
-        label1.Text = resultado.ToString();
+        catch
+        {
+            label1.Text = "Error";
+            expresion = "";
+        }
         nuevoNumero = true;
     }
+
 
     private void Limpiar()
     {
         label1.Text = "0";
-        operacion = "";
-        valor1 = 0;
-        valor2 = 0;
+        expresion = "";
         nuevoNumero = true;
     }
 
@@ -155,10 +165,11 @@ public partial class Form1 : Form
         }
     }
 
+
     private void InsertarParentesis(string parentesis)
     {
-        // Solo visual, no funcional (puedes expandir para operaciones avanzadas)
         label1.Text += parentesis;
+        expresion += parentesis;
     }
 
     private void MemoriaMas()
@@ -185,6 +196,7 @@ public partial class Form1 : Form
     }
 
     // Modificar el botón igual para calcular potencia si corresponde
+
     private void b_igual_Click(object sender, EventArgs e)
     {
         if (esperandoPotencia)
@@ -197,4 +209,6 @@ public partial class Form1 : Form
     {
         throw new System.NotImplementedException();
     }
+    
+   
 }
