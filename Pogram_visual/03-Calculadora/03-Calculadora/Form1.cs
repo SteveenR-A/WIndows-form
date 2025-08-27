@@ -74,7 +74,30 @@ public partial class Form1 : Form
 
     private void AgregarPunto()
     {
-        if (!label1.Text.Contains("."))
+           // Encontrar la posición del último operador en la expresión
+        int indiceUltimoOperador = expresion.LastIndexOfAny(new char[] { '+', '-', '*', '/' });
+
+        // Obtener la subcadena que representa el número actual
+        string numeroActual = (indiceUltimoOperador == -1)
+            ? expresion
+            : expresion.Substring(indiceUltimoOperador + 1);
+
+        // Si el número actual no contiene un punto, lo agregamos
+        if (!numeroActual.Contains("."))
+        {
+            // Si se presiona el punto justo después de un operador, añadir "0."
+            if (numeroActual == "")
+            {
+                label1.Text += "0.";
+                expresion += "0.";
+            }
+            else
+            {
+                label1.Text += ".";
+                expresion += ".";
+            }
+            nuevoNumero = false;
+        }if (!label1.Text.Contains("."))
         {
             label1.Text += ".";
             expresion += ".";
@@ -176,23 +199,28 @@ public partial class Form1 : Form
     {
         if (double.TryParse(label1.Text, out var v))
             memoria += v;
+        MessageBox.Show("Memoria: " + memoria);
+
     }
 
     private void MemoriaMenos()
     {
         if (double.TryParse(label1.Text, out var v))
             memoria -= v;
+            MessageBox.Show("Memoria: " + memoria);
     }
 
     private void MemoriaClear()
     {
         memoria = 0;
+        MessageBox.Show("Memoria borrada");
     }
 
     private void MemoriaRecall()
     {
         label1.Text = memoria.ToString();
         nuevoNumero = true;
+        MessageBox.Show("MemoriaRecall");
     }
 
     // Modificar el botón igual para calcular potencia si corresponde
