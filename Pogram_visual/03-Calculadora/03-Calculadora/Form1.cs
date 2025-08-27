@@ -159,6 +159,7 @@ public partial class Form1 : Form
     private void InsertarPi()
     {
         label1.Text = Math.PI.ToString();
+        expresion = label1.Text; // Actualizar la expresión
         nuevoNumero = true;
     }
 
@@ -219,8 +220,8 @@ public partial class Form1 : Form
     private void MemoriaRecall()
     {
         label1.Text = memoria.ToString();
+        expresion = label1.Text; // Actualizar la expresión
         nuevoNumero = true;
-        MessageBox.Show("MemoriaRecall");
     }
 
     // Modificar el botón igual para calcular potencia si corresponde
