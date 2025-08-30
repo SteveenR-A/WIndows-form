@@ -43,10 +43,17 @@ partial class Form1
         textLugar = new System.Windows.Forms.TextBox();
         lblEstado = new System.Windows.Forms.Label();
         cmbEstado = new System.Windows.Forms.ComboBox();
-        btAgregar = new System.Windows.Forms.Button();
+        btnAgregar = new System.Windows.Forms.Button();
         btnEditar = new System.Windows.Forms.Button();
         btnEliminar = new System.Windows.Forms.Button();
         dgvTareas = new System.Windows.Forms.DataGridView();
+        txtBuscarCodigo = new System.Windows.Forms.TextBox();
+        btnBuscarCodigo = new System.Windows.Forms.Button();
+        cmbBuscarEstado = new System.Windows.Forms.ComboBox();
+        btnBuscarEstado = new System.Windows.Forms.Button();
+        dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
+        dtpFechaFin = new System.Windows.Forms.DateTimePicker();
+        btnBuscarFecha = new System.Windows.Forms.Button();
         ((System.ComponentModel.ISupportInitialize)dgvTareas).BeginInit();
         SuspendLayout();
         // 
@@ -163,43 +170,104 @@ partial class Form1
         cmbEstado.Size = new System.Drawing.Size(162, 23);
         cmbEstado.TabIndex = 11;
         // 
-        // btAgregar
+        // btnAgregar
         // 
-        btAgregar.Location = new System.Drawing.Point(57, 566);
-        btAgregar.Name = "btAgregar";
-        btAgregar.Size = new System.Drawing.Size(100, 34);
-        btAgregar.TabIndex = 12;
-        btAgregar.Text = "Agregar Tarea";
-        btAgregar.UseVisualStyleBackColor = true;
-        
+        btnAgregar.Location = new System.Drawing.Point(57, 335);
+        btnAgregar.Name = "btnAgregar";
+        btnAgregar.Size = new System.Drawing.Size(100, 34);
+        btnAgregar.TabIndex = 12;
+        btnAgregar.Text = "Agregar Tarea";
+        btnAgregar.UseVisualStyleBackColor = true;
+        btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
         // 
         // btnEditar
         // 
-        btnEditar.Location = new System.Drawing.Point(174, 566);
+        btnEditar.Location = new System.Drawing.Point(174, 335);
         btnEditar.Name = "btnEditar";
         btnEditar.Size = new System.Drawing.Size(100, 34);
         btnEditar.TabIndex = 13;
         btnEditar.Text = "Editar Tarea";
         btnEditar.UseVisualStyleBackColor = true;
+        btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
         // 
         // btnEliminar
         // 
-        btnEliminar.Location = new System.Drawing.Point(291, 566);
+        btnEliminar.Location = new System.Drawing.Point(293, 335);
         btnEliminar.Name = "btnEliminar";
         btnEliminar.Size = new System.Drawing.Size(100, 34);
         btnEliminar.TabIndex = 14;
         btnEliminar.Text = "Eliminar Tarea";
         btnEliminar.UseVisualStyleBackColor = true;
+        btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
         // 
         // dgvTareas
         // 
         dgvTareas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-        dgvTareas.Location = new System.Drawing.Point(81, 427);
+        dgvTareas.Location = new System.Drawing.Point(57, 410);
         dgvTareas.MultiSelect = false;
         dgvTareas.Name = "dgvTareas";
         dgvTareas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-        dgvTareas.Size = new System.Drawing.Size(204, 150);
+        dgvTareas.Size = new System.Drawing.Size(404, 150);
         dgvTareas.TabIndex = 15;
+        // 
+        // txtBuscarCodigo
+        // 
+        txtBuscarCodigo.Location = new System.Drawing.Point(57, 380);
+        txtBuscarCodigo.Name = "txtBuscarCodigo";
+        txtBuscarCodigo.Size = new System.Drawing.Size(120, 23);
+        txtBuscarCodigo.TabIndex = 16;
+        // 
+        // btnBuscarCodigo
+        // 
+        btnBuscarCodigo.Location = new System.Drawing.Point(183, 380);
+        btnBuscarCodigo.Name = "btnBuscarCodigo";
+        btnBuscarCodigo.Size = new System.Drawing.Size(100, 23);
+        btnBuscarCodigo.TabIndex = 17;
+        btnBuscarCodigo.Text = "Buscar Código";
+        btnBuscarCodigo.UseVisualStyleBackColor = true;
+        btnBuscarCodigo.Click += new System.EventHandler(this.btnBuscarCodigo_Click);
+        // 
+        // cmbBuscarEstado
+        // 
+        cmbBuscarEstado.Location = new System.Drawing.Point(291, 380);
+        cmbBuscarEstado.Name = "cmbBuscarEstado";
+        cmbBuscarEstado.Size = new System.Drawing.Size(120, 23);
+        cmbBuscarEstado.TabIndex = 18;
+        cmbBuscarEstado.Items.AddRange(new object[] { "No realizado", "En proceso", "Terminada" });
+        // 
+        // btnBuscarEstado
+        // 
+        btnBuscarEstado.Location = new System.Drawing.Point(417, 380);
+        btnBuscarEstado.Name = "btnBuscarEstado";
+        btnBuscarEstado.Size = new System.Drawing.Size(100, 23);
+        btnBuscarEstado.TabIndex = 19;
+        btnBuscarEstado.Text = "Buscar Estado";
+        btnBuscarEstado.UseVisualStyleBackColor = true;
+        btnBuscarEstado.Click += new System.EventHandler(this.btnBuscarEstado_Click);
+        // 
+        // dtpFechaInicio
+        // 
+        dtpFechaInicio.Location = new System.Drawing.Point(57, 410);
+        dtpFechaInicio.Name = "dtpFechaInicio";
+        dtpFechaInicio.Size = new System.Drawing.Size(120, 23);
+        dtpFechaInicio.TabIndex = 20;
+        // 
+        // dtpFechaFin
+        // 
+        dtpFechaFin.Location = new System.Drawing.Point(183, 410);
+        dtpFechaFin.Name = "dtpFechaFin";
+        dtpFechaFin.Size = new System.Drawing.Size(120, 23);
+        dtpFechaFin.TabIndex = 21;
+        // 
+        // btnBuscarFecha
+        // 
+        btnBuscarFecha.Location = new System.Drawing.Point(309, 410);
+        btnBuscarFecha.Name = "btnBuscarFecha";
+        btnBuscarFecha.Size = new System.Drawing.Size(100, 23);
+        btnBuscarFecha.TabIndex = 22;
+        btnBuscarFecha.Text = "Buscar Fecha";
+        btnBuscarFecha.UseVisualStyleBackColor = true;
+        btnBuscarFecha.Click += new System.EventHandler(this.btnBuscarFecha_Click);
         // 
         // Form1
         // 
@@ -210,7 +278,7 @@ partial class Form1
         Controls.Add(dgvTareas);
         Controls.Add(btnEliminar);
         Controls.Add(btnEditar);
-        Controls.Add(btAgregar);
+        Controls.Add(btnAgregar);
         Controls.Add(cmbEstado);
         Controls.Add(lblEstado);
         Controls.Add(textLugar);
@@ -223,6 +291,13 @@ partial class Form1
         Controls.Add(lblNombre);
         Controls.Add(txtCodigo);
         Controls.Add(lblCodigo);
+        Controls.Add(txtBuscarCodigo);
+        Controls.Add(btnBuscarCodigo);
+        Controls.Add(cmbBuscarEstado);
+        Controls.Add(btnBuscarEstado);
+        Controls.Add(dtpFechaInicio);
+        Controls.Add(dtpFechaFin);
+        Controls.Add(btnBuscarFecha);
         Location = new System.Drawing.Point(15, 15);
         Text = "Form1";
         ((System.ComponentModel.ISupportInitialize)dgvTareas).EndInit();
@@ -230,9 +305,8 @@ partial class Form1
         PerformLayout();
     }
 
-    private System.Windows.Forms.Button btAgregar;
+    private System.Windows.Forms.Button btnAgregar;
     private System.Windows.Forms.Button btnEditar;
-
     private System.Windows.Forms.Button btnEliminar;
 
     private System.Windows.Forms.ComboBox cmbEstado;
@@ -261,6 +335,13 @@ partial class Form1
 
     private System.Windows.Forms.DataGridView dgvTareas;
 
+    private System.Windows.Forms.TextBox txtBuscarCodigo;
+    private System.Windows.Forms.Button btnBuscarCodigo;
+    private System.Windows.Forms.ComboBox cmbBuscarEstado;
+    private System.Windows.Forms.Button btnBuscarEstado;
+    private System.Windows.Forms.DateTimePicker dtpFechaInicio;
+    private System.Windows.Forms.DateTimePicker dtpFechaFin;
+    private System.Windows.Forms.Button btnBuscarFecha;
+
     #endregion
 }
-
