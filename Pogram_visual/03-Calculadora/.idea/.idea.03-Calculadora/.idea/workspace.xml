@@ -8,18 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="859289af-9899-43c3-ae25-ef7811303344" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.03-Calculadora/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.03-Calculadora/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.dll" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.exe" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/bin/Debug/net9.0-windows/03-Calculadora.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.dll" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/03-Calculadora.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/ref/03-Calculadora.dll" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/ref/03-Calculadora.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/refint/03-Calculadora.dll" beforeDir="false" afterPath="$PROJECT_DIR$/03-Calculadora/obj/Debug/net9.0-windows/refint/03-Calculadora.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +100,7 @@
       <workItem from="1756130533820" duration="345000" />
       <workItem from="1756214223291" duration="3895000" />
       <workItem from="1756301462714" duration="116000" />
+      <workItem from="1756352263983" duration="91000" />
     </task>
     <task id="LOCAL-00001" summary="diseno calculadora">
       <option name="closed" value="true" />
