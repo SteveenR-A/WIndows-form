@@ -178,7 +178,7 @@ partial class Form1
         btnAgregar.TabIndex = 12;
         btnAgregar.Text = "Agregar Tarea";
         btnAgregar.UseVisualStyleBackColor = true;
-        btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+        btnAgregar.Click += btnAgregar_Click;
         // 
         // btnEditar
         // 
@@ -188,7 +188,7 @@ partial class Form1
         btnEditar.TabIndex = 13;
         btnEditar.Text = "Editar Tarea";
         btnEditar.UseVisualStyleBackColor = true;
-        btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+        btnEditar.Click += btnEditar_Click;
         // 
         // btnEliminar
         // 
@@ -198,12 +198,12 @@ partial class Form1
         btnEliminar.TabIndex = 14;
         btnEliminar.Text = "Eliminar Tarea";
         btnEliminar.UseVisualStyleBackColor = true;
-        btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+        btnEliminar.Click += btnEliminar_Click;
         // 
         // dgvTareas
         // 
         dgvTareas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-        dgvTareas.Location = new System.Drawing.Point(57, 410);
+        dgvTareas.Location = new System.Drawing.Point(49, 482);
         dgvTareas.MultiSelect = false;
         dgvTareas.Name = "dgvTareas";
         dgvTareas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -212,28 +212,28 @@ partial class Form1
         // 
         // txtBuscarCodigo
         // 
-        txtBuscarCodigo.Location = new System.Drawing.Point(57, 380);
+        txtBuscarCodigo.Location = new System.Drawing.Point(49, 381);
         txtBuscarCodigo.Name = "txtBuscarCodigo";
         txtBuscarCodigo.Size = new System.Drawing.Size(120, 23);
         txtBuscarCodigo.TabIndex = 16;
         // 
         // btnBuscarCodigo
         // 
-        btnBuscarCodigo.Location = new System.Drawing.Point(183, 380);
+        btnBuscarCodigo.Location = new System.Drawing.Point(175, 380);
         btnBuscarCodigo.Name = "btnBuscarCodigo";
         btnBuscarCodigo.Size = new System.Drawing.Size(100, 23);
         btnBuscarCodigo.TabIndex = 17;
         btnBuscarCodigo.Text = "Buscar Código";
         btnBuscarCodigo.UseVisualStyleBackColor = true;
-        btnBuscarCodigo.Click += new System.EventHandler(this.btnBuscarCodigo_Click);
+        btnBuscarCodigo.Click += btnBuscarCodigo_Click;
         // 
         // cmbBuscarEstado
         // 
+        cmbBuscarEstado.Items.AddRange(new object[] { "No realizado", "En proceso", "Terminada" });
         cmbBuscarEstado.Location = new System.Drawing.Point(291, 380);
         cmbBuscarEstado.Name = "cmbBuscarEstado";
         cmbBuscarEstado.Size = new System.Drawing.Size(120, 23);
         cmbBuscarEstado.TabIndex = 18;
-        cmbBuscarEstado.Items.AddRange(new object[] { "No realizado", "En proceso", "Terminada" });
         // 
         // btnBuscarEstado
         // 
@@ -243,31 +243,31 @@ partial class Form1
         btnBuscarEstado.TabIndex = 19;
         btnBuscarEstado.Text = "Buscar Estado";
         btnBuscarEstado.UseVisualStyleBackColor = true;
-        btnBuscarEstado.Click += new System.EventHandler(this.btnBuscarEstado_Click);
+        btnBuscarEstado.Click += btnBuscarEstado_Click;
         // 
         // dtpFechaInicio
         // 
-        dtpFechaInicio.Location = new System.Drawing.Point(57, 410);
+        dtpFechaInicio.Location = new System.Drawing.Point(57, 453);
         dtpFechaInicio.Name = "dtpFechaInicio";
         dtpFechaInicio.Size = new System.Drawing.Size(120, 23);
         dtpFechaInicio.TabIndex = 20;
         // 
         // dtpFechaFin
         // 
-        dtpFechaFin.Location = new System.Drawing.Point(183, 410);
+        dtpFechaFin.Location = new System.Drawing.Point(183, 453);
         dtpFechaFin.Name = "dtpFechaFin";
         dtpFechaFin.Size = new System.Drawing.Size(120, 23);
         dtpFechaFin.TabIndex = 21;
         // 
         // btnBuscarFecha
         // 
-        btnBuscarFecha.Location = new System.Drawing.Point(309, 410);
+        btnBuscarFecha.Location = new System.Drawing.Point(311, 453);
         btnBuscarFecha.Name = "btnBuscarFecha";
         btnBuscarFecha.Size = new System.Drawing.Size(100, 23);
         btnBuscarFecha.TabIndex = 22;
         btnBuscarFecha.Text = "Buscar Fecha";
         btnBuscarFecha.UseVisualStyleBackColor = true;
-        btnBuscarFecha.Click += new System.EventHandler(this.btnBuscarFecha_Click);
+        btnBuscarFecha.Click += btnBuscarFecha_Click;
         // 
         // Form1
         // 

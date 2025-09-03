@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\herna\\RiderProjects\\Programacion_visual\\Pogram_visual\\GestorTareas\\GestorTareas\\GestorTareas.csproj",
+      "projectUniqueName": "C:\\Users\\herna\\RiderProjects\\WIndows-form\\Pogram_visual\\GestorTareas\\GestorTareas\\GestorTareas.csproj",
       "projectName": "GestorTareas",
-      "projectPath": "C:\\Users\\herna\\RiderProjects\\Programacion_visual\\Pogram_visual\\GestorTareas\\GestorTareas\\GestorTareas.csproj",
+      "projectPath": "C:\\Users\\herna\\RiderProjects\\WIndows-form\\Pogram_visual\\GestorTareas\\GestorTareas\\GestorTareas.csproj",
       "packagesPath": "C:\\Users\\herna\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\herna\\RiderProjects\\Programacion_visual\\Pogram_visual\\GestorTareas\\GestorTareas\\obj\\",
+      "outputPath": "C:\\Users\\herna\\RiderProjects\\WIndows-form\\Pogram_visual\\GestorTareas\\GestorTareas\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
