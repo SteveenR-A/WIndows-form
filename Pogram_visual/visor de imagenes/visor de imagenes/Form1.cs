@@ -12,35 +12,77 @@ public partial class Form1 : Form
 
     public Form1()
     {
-    InitializeComponent();
-    CargarImagenes();
-    comboBoxImages.SelectedIndexChanged += comboBoxImages_SelectedIndexChanged;
+        InitializeComponent();
+        CargarImagenes();
+        comboBoxImages.SelectedIndexChanged += comboBoxImages_SelectedIndexChanged;
 
-    // Menú Archivo
-    guardarMenu.Click += guardarMenu_Click;
-    salirMenu.Click += salirMenu_Click;
+        // Menú Archivo
+        guardarMenu.Click += guardarMenu_Click;
+        salirMenu.Click += salirMenu_Click;
 
-    // Menú Visión
-    normalVisionMenu.Click += visionMenu_Click;
-    grisVisionMenu.Click += visionMenu_Click;
+        // Menú Visión
+        normalVisionMenu.Click += visionMenu_Click;
+        grisVisionMenu.Click += visionMenu_Click;
 
-    // Menú Tamaño
-    centradaTamanoMenu.Click += tamanoMenu_Click;
-    ajustarTamanoMenu.Click += tamanoMenu_Click;
-    zoomTamanoMenu.Click += tamanoMenu_Click;
+        // Menú Tamaño
+        centradaTamanoMenu.Click += tamanoMenu_Click;
+        ajustarTamanoMenu.Click += tamanoMenu_Click;
+        zoomTamanoMenu.Click += tamanoMenu_Click;
 
-    // Barra de herramientas
-    toolStripNormalVision.Click += visionMenu_Click;
-    toolStripGrisVision.Click += visionMenu_Click;
-    toolStripCentradaTamano.Click += tamanoMenu_Click;
-    toolStripAjustarTamano.Click += tamanoMenu_Click;
-    toolStripZoomTamano.Click += tamanoMenu_Click;
+        // Barra de herramientas
+        toolStripNormalVision.Click += visionMenu_Click;
+        toolStripGrisVision.Click += visionMenu_Click;
+        toolStripCentradaTamano.Click += tamanoMenu_Click;
+        toolStripAjustarTamano.Click += tamanoMenu_Click;
+        toolStripZoomTamano.Click += tamanoMenu_Click;
 
-    // Menú contextual
-    girarIzquierdaMenu.Click += girarIzquierdaMenu_Click;
-    girarDerechaMenu.Click += girarDerechaMenu_Click;
-    copiarMenu.Click += copiarMenu_Click;
+        // Menú contextual
+        girarIzquierdaMenu.Click += girarIzquierdaMenu_Click;
+        girarDerechaMenu.Click += girarDerechaMenu_Click;
+        copiarMenu.Click += copiarMenu_Click;
+
+        // Botones de desplazamiento
+        btnFirst.Click += btnFirst_Click;
+        btnPrev.Click += btnPrev_Click;
+        btnNext.Click += btnNext_Click;
+        btnLast.Click += btnLast_Click;
     }
+    // Ir a la primera imagen
+    private void btnFirst_Click(object? sender, EventArgs e)
+    {
+        if (imagenes.Count > 0)
+        {
+            MostrarImagen(0);
+        }
+    }
+
+    // Ir a la imagen anterior
+    private void btnPrev_Click(object? sender, EventArgs e)
+    {
+        if (imagenes.Count > 0 && imagenActual > 0)
+        {
+            MostrarImagen(imagenActual - 1);
+        }
+    }
+
+    // Ir a la imagen siguiente
+    private void btnNext_Click(object? sender, EventArgs e)
+    {
+        if (imagenes.Count > 0 && imagenActual < imagenes.Count - 1)
+        {
+            MostrarImagen(imagenActual + 1);
+        }
+    }
+
+    // Ir a la última imagen
+    private void btnLast_Click(object? sender, EventArgs e)
+    {
+        if (imagenes.Count > 0)
+        {
+            MostrarImagen(imagenes.Count - 1);
+        }
+    }
+    
 
     private void CargarImagenes()
     {
