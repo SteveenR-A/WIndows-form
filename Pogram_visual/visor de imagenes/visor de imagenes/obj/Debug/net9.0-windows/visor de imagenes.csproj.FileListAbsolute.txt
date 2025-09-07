@@ -13,3 +13,5 @@ C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor 
 C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\obj\Debug\net9.0-windows\visor de imagenes.pdb
 C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\obj\Debug\net9.0-windows\visor de imagenes.genruntimeconfig.cache
 C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\obj\Debug\net9.0-windows\ref\visor de imagenes.dll
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\obj\Debug\net9.0-windows\visor_de_imagenes.Form1.resources
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\obj\Debug\net9.0-windows\visor de imagenes.csproj.GenerateResource.cache
