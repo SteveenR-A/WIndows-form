@@ -1,0 +1,15 @@
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\bin\Debug\net9.0-windows\visor de imagenes.exe
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\bin\Debug\net9.0-windows\visor de imagenes.deps.json
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\bin\Debug\net9.0-windows\visor de imagenes.runtimeconfig.json
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\bin\Debug\net9.0-windows\visor de imagenes.dll
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\bin\Debug\net9.0-windows\visor de imagenes.pdb
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\obj\Debug\net9.0-windows\visor de imagenes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\obj\Debug\net9.0-windows\visor de imagenes.AssemblyInfoInputs.cache
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\obj\Debug\net9.0-windows\visor de imagenes.AssemblyInfo.cs
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\obj\Debug\net9.0-windows\visor de imagenes.csproj.CoreCompileInputs.cache
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\obj\Debug\net9.0-windows\visor de imagenes.sourcelink.json
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\obj\Debug\net9.0-windows\visor de imagenes.dll
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\obj\Debug\net9.0-windows\refint\visor de imagenes.dll
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\obj\Debug\net9.0-windows\visor de imagenes.pdb
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\obj\Debug\net9.0-windows\visor de imagenes.genruntimeconfig.cache
+C:\Users\herna\RiderProjects\WIndows-form\Pogram_visual\visor de imagenes\visor de imagenes\obj\Debug\net9.0-windows\ref\visor de imagenes.dll

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("visor de imagenes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3264b7e1b854a14ccdf3d9fb060d6d1bc593604")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+39df758a2192cff5ffc56146a00f3f8c858afd1c")]
 [assembly: System.Reflection.AssemblyProductAttribute("visor de imagenes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("visor de imagenes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
