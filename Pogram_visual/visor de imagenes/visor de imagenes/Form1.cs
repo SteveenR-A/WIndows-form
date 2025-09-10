@@ -46,6 +46,10 @@ public partial class Form1 : Form
         btnPrev.Click += btnPrev_Click;
         btnNext.Click += btnNext_Click;
         btnLast.Click += btnLast_Click;
+
+        // Botones de rotación
+        btnRotateLeft.Click += girarIzquierdaMenu_Click;
+        btnRotateRight.Click += girarDerechaMenu_Click;
     }
     // Ir a la primera imagen
     private void btnFirst_Click(object? sender, EventArgs e)

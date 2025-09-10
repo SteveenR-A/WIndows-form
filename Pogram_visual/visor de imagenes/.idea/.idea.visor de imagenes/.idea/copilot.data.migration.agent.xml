@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AgentMigrationStateService">
+    <option name="migrationStatus" value="IN_PROGRESS" />
+    <option name="pendingTurns">
+      <map>
+        <entry key="8d76d8d9-2e82-4370-bab6-41feb0290553">
+          <value>
+            <set>
+              <option value="a81389eb-38e6-40e9-950e-db8261f57845" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

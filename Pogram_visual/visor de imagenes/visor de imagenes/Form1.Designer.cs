@@ -12,7 +12,9 @@ namespace visor_de_imagenes
         private System.Windows.Forms.Button btnPrev;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnLast;
-        private System.Windows.Forms.StatusStrip statusStrip;
+    private System.Windows.Forms.StatusStrip statusStrip;
+    private System.Windows.Forms.Button btnRotateLeft;
+    private System.Windows.Forms.Button btnRotateRight;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem archivoMenu;
@@ -69,6 +71,8 @@ namespace visor_de_imagenes
             btnNext = new System.Windows.Forms.Button();
             btnLast = new System.Windows.Forms.Button();
             statusStrip = new System.Windows.Forms.StatusStrip();
+            btnRotateLeft = new System.Windows.Forms.Button();
+            btnRotateRight = new System.Windows.Forms.Button();
             toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             menuStrip = new System.Windows.Forms.MenuStrip();
             archivoMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -201,30 +205,42 @@ namespace visor_de_imagenes
             guardarMenu.Size = new System.Drawing.Size(116, 22);
             guardarMenu.Text = "Guardar";
             // 
-            // salirMenu
-            // 
-            salirMenu.Name = "salirMenu";
-            salirMenu.Size = new System.Drawing.Size(116, 22);
-            salirMenu.Text = "Salir";
-            // 
-            // visionMenu
-            // 
-            visionMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { normalVisionMenu, grisVisionMenu });
-            visionMenu.Name = "visionMenu";
-            visionMenu.Size = new System.Drawing.Size(51, 20);
-            visionMenu.Text = "Visión";
-            // 
-            // normalVisionMenu
-            // 
-            normalVisionMenu.Name = "normalVisionMenu";
-            normalVisionMenu.Size = new System.Drawing.Size(114, 22);
-            normalVisionMenu.Text = "Normal";
-            // 
-            // grisVisionMenu
-            // 
-            grisVisionMenu.Name = "grisVisionMenu";
-            grisVisionMenu.Size = new System.Drawing.Size(114, 22);
-            grisVisionMenu.Text = "Gris";
+            // btnFirst
+            btnFirst.Location = new System.Drawing.Point(319, 51);
+            btnFirst.Name = "btnFirst";
+            btnFirst.Size = new System.Drawing.Size(30, 23);
+            btnFirst.TabIndex = 3;
+            btnFirst.Text = "<<";
+            // btnPrev
+            btnPrev.Location = new System.Drawing.Point(355, 51);
+            btnPrev.Name = "btnPrev";
+            btnPrev.Size = new System.Drawing.Size(30, 23);
+            btnPrev.TabIndex = 4;
+            btnPrev.Text = "<";
+            // btnNext
+            btnNext.Location = new System.Drawing.Point(391, 51);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new System.Drawing.Size(30, 23);
+            btnNext.TabIndex = 5;
+            btnNext.Text = ">";
+            // btnLast
+            btnLast.Location = new System.Drawing.Point(427, 51);
+            btnLast.Name = "btnLast";
+            btnLast.Size = new System.Drawing.Size(30, 23);
+            btnLast.TabIndex = 6;
+            btnLast.Text = ">>";
+            // btnRotateLeft
+            btnRotateLeft.Location = new System.Drawing.Point(463, 51);
+            btnRotateLeft.Name = "btnRotateLeft";
+            btnRotateLeft.Size = new System.Drawing.Size(30, 23);
+            btnRotateLeft.TabIndex = 7;
+            btnRotateLeft.Text = "⟲";
+            // btnRotateRight
+            btnRotateRight.Location = new System.Drawing.Point(499, 51);
+            btnRotateRight.Name = "btnRotateRight";
+            btnRotateRight.Size = new System.Drawing.Size(30, 23);
+            btnRotateRight.TabIndex = 8;
+            btnRotateRight.Text = "⟳";
             // 
             // tamanoMenu
             // 
@@ -298,6 +314,8 @@ namespace visor_de_imagenes
             Controls.Add(btnPrev);
             Controls.Add(btnNext);
             Controls.Add(btnLast);
+            Controls.Add(btnRotateLeft);
+            Controls.Add(btnRotateRight);
             Controls.Add(statusStrip);
             Controls.Add(toolStrip);
             Controls.Add(menuStrip);
