@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "bv1+Gzq0OgA=",
+  "dgSpecHash": "CnwXf6XH39M=",
   "success": true,
-  "projectFilePath": "C:\\Users\\herna\\RiderProjects\\Programacion_visual\\Pogram_visual\\MDIEstudiantes\\MDIEstudiantes\\MDIEstudiantes.csproj",
+  "projectFilePath": "C:\\Users\\herna\\Documents\\c#\\WIndows-form\\Pogram_visual\\Pogram_visual\\MDIEstudiantes\\MDIEstudiantes\\MDIEstudiantes.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\herna\\.nuget\\packages\\system.windows.forms.datavisualization\\1.0.0-prerelease.20110.1\\system.windows.forms.datavisualization.1.0.0-prerelease.20110.1.nupkg.sha512"
+    "C:\\Users\\herna\\.nuget\\packages\\system.windows.forms.datavisualization\\1.0.0-prerelease.20110.1\\system.windows.forms.datavisualization.1.0.0-prerelease.20110.1.nupkg.sha512",
+    "C:\\Users\\herna\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.5\\microsoft.netcore.app.ref.9.0.5.nupkg.sha512",
+    "C:\\Users\\herna\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.5\\microsoft.windowsdesktop.app.ref.9.0.5.nupkg.sha512",
+    "C:\\Users\\herna\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.5\\microsoft.aspnetcore.app.ref.9.0.5.nupkg.sha512",
+    "C:\\Users\\herna\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\9.0.5\\microsoft.netcore.app.host.win-x64.9.0.5.nupkg.sha512"
   ],
   "logs": []
 }
