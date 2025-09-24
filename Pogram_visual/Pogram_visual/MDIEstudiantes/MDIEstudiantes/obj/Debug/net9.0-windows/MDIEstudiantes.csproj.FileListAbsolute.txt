@@ -1,0 +1,16 @@
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\bin\Debug\net9.0-windows\MDIEstudiantes.exe
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\bin\Debug\net9.0-windows\MDIEstudiantes.deps.json
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\bin\Debug\net9.0-windows\MDIEstudiantes.runtimeconfig.json
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\bin\Debug\net9.0-windows\MDIEstudiantes.dll
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\bin\Debug\net9.0-windows\MDIEstudiantes.pdb
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\obj\Debug\net9.0-windows\MDIEstudiantes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\obj\Debug\net9.0-windows\MDIEstudiantes.AssemblyInfoInputs.cache
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\obj\Debug\net9.0-windows\MDIEstudiantes.AssemblyInfo.cs
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\obj\Debug\net9.0-windows\MDIEstudiantes.csproj.CoreCompileInputs.cache
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\obj\Debug\net9.0-windows\MDIEstudiantes.dll
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\obj\Debug\net9.0-windows\refint\MDIEstudiantes.dll
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\obj\Debug\net9.0-windows\MDIEstudiantes.pdb
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\obj\Debug\net9.0-windows\MDIEstudiantes.genruntimeconfig.cache
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\obj\Debug\net9.0-windows\ref\MDIEstudiantes.dll
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\obj\Debug\net9.0-windows\MDIEstudiantes.Form1.resources
+C:\Users\herna\RiderProjects\Programacion_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\obj\Debug\net9.0-windows\MDIEstudiantes.csproj.GenerateResource.cache
