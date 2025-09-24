@@ -11,11 +11,14 @@ public partial class Form1 : Form
         {
             var btnForm2 = menuStrip.Items["btnForm2"] as ToolStripMenuItem;
             var btnForm3 = menuStrip.Items["btnForm3"] as ToolStripMenuItem;
+            var btnFormGrafico = menuStrip.Items["btnFormGrafico"] as ToolStripMenuItem;
             // ...existing code...
             if (btnForm2 != null)
                 btnForm2.Click += BtnForm2_Click;
             if (btnForm3 != null)
                 btnForm3.Click += BtnForm3_Click;
+            if (btnFormGrafico != null)
+                btnFormGrafico.Click += BtnFormGrafico_Click;
             // ...existing code...
         }
     }
@@ -57,4 +60,21 @@ public partial class Form1 : Form
     {
         // Puedes agregar aquí lógica de inicialización si lo necesitas
     }
+
+    private void BtnFormGrafico_Click(object? sender, EventArgs e)
+    {
+        // Evitar abrir múltiples instancias de FormGrafico
+        foreach (Form frm in this.MdiChildren)
+        {
+            if (frm is FormGrafico)
+            {
+                frm.Activate();
+                return;
+            }
+        }
+        var formGrafico = new FormGrafico();
+        formGrafico.MdiParent = this;
+        formGrafico.Show();
+    }
 }
+

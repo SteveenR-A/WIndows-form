@@ -5,9 +5,9 @@ namespace MDIEstudiantes
 {
     public partial class Form3 : Form
     {
-    private TextBox? txtCarnet;
-    private TextBox? txtNombre;
     private DataGridView? dgvDatos;
+    private TextBox? txtBuscar;
+    private Button? btnBuscar;
 
         public Form3()
         {
@@ -16,51 +16,87 @@ namespace MDIEstudiantes
 
         private void InicializarControles()
         {
-            this.Text = "Visualización de Estudiante";
-            this.Size = new System.Drawing.Size(400, 400);
+            this.Text = "Lista de Estudiantes";
+            this.Size = new System.Drawing.Size(600, 400);
 
-            var lblCarnet = new Label { Text = "Carnet:", Location = new System.Drawing.Point(20, 20) };
-            txtCarnet = new TextBox { Name = "txtCarnet", Location = new System.Drawing.Point(120, 20), Width = 200, ReadOnly = true };
-            var lblNombre = new Label { Text = "Nombre:", Location = new System.Drawing.Point(20, 60) };
-            txtNombre = new TextBox { Name = "txtNombre", Location = new System.Drawing.Point(120, 60), Width = 200, ReadOnly = true };
+            txtBuscar = new TextBox
+            {
+                Name = "txtBuscar",
+                Location = new System.Drawing.Point(20, 350),
+                Width = 300
+            };
+            btnBuscar = new Button
+            {
+                Name = "btnBuscar",
+                Text = "Buscar",
+                Location = new System.Drawing.Point(340, 350),
+                Width = 80
+            };
+            btnBuscar.Click += BtnBuscar_Click;
 
             dgvDatos = new DataGridView
             {
                 Name = "dgvDatos",
-                Location = new System.Drawing.Point(20, 100),
-                Width = 340,
-                Height = 180,
+                Location = new System.Drawing.Point(20, 20),
+                Width = 540,
+                Height = 320,
                 AllowUserToAddRows = false,
-                ColumnCount = 2
+                ReadOnly = true,
+                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
+                ColumnCount = 4
             };
-            dgvDatos.Columns[0].Name = "Asignatura";
-            dgvDatos.Columns[1].Name = "Nota Final";
+            dgvDatos.Columns[0].Name = "Nombre";
+            dgvDatos.Columns[1].Name = "Carnet";
+            dgvDatos.Columns[2].Name = "Materia";
+            dgvDatos.Columns[3].Name = "Nota";
 
-            this.Controls.Add(lblCarnet);
-            this.Controls.Add(txtCarnet);
-            this.Controls.Add(lblNombre);
-            this.Controls.Add(txtNombre);
             this.Controls.Add(dgvDatos);
-
+            this.Controls.Add(txtBuscar);
+            this.Controls.Add(btnBuscar);
             this.Load += Form3_Load;
         }
 
         private void Form3_Load(object? sender, EventArgs e)
         {
-            if (DatosCompartidos.EstudianteActual != null)
-            {
-                txtCarnet!.Text = DatosCompartidos.EstudianteActual.Carnet ?? string.Empty;
-                txtNombre!.Text = DatosCompartidos.EstudianteActual.Nombre ?? string.Empty;
+            MostrarEstudiantes(DatosCompartidos.Estudiantes);
+        }
 
-                dgvDatos!.Rows.Clear();
-                foreach (var asig in DatosCompartidos.EstudianteActual.Asignaturas)
+        private void BtnBuscar_Click(object? sender, EventArgs e)
+        {
+            string filtro = txtBuscar?.Text.Trim() ?? string.Empty;
+            if (string.IsNullOrEmpty(filtro))
+            {
+                MostrarEstudiantes(DatosCompartidos.Estudiantes);
+                return;
+            }
+            var filtrados = DatosCompartidos.Estudiantes
+                .Where(est => (est.Nombre != null && est.Nombre.Contains(filtro, StringComparison.OrdinalIgnoreCase))
+                          || (est.Carnet != null && est.Carnet.Contains(filtro, StringComparison.OrdinalIgnoreCase)))
+                .ToList();
+            MostrarEstudiantes(filtrados);
+        }
+
+        private void MostrarEstudiantes(System.Collections.Generic.List<Estudiante> lista)
+        {
+            dgvDatos!.Rows.Clear();
+            if (lista.Count > 0)
+            {
+                foreach (var est in lista)
                 {
-                    dgvDatos.Rows.Add(asig.Nombre ?? string.Empty, asig.Nota);
+                    foreach (var asig in est.Asignaturas)
+                    {
+                        dgvDatos.Rows.Add(
+                            est.Nombre ?? string.Empty,
+                            est.Carnet ?? string.Empty,
+                            asig.Nombre ?? string.Empty,
+                            asig.Nota
+                        );
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("No hay datos de estudiante cargados.");
+                MessageBox.Show("No hay estudiantes registrados o no hay coincidencias.");
             }
         }
     }

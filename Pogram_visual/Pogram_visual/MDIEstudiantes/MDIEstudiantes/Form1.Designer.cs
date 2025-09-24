@@ -32,12 +32,13 @@ partial class Form1
     menuStrip = new System.Windows.Forms.MenuStrip();
     btnForm2 = new System.Windows.Forms.ToolStripMenuItem();
     btnForm3 = new System.Windows.Forms.ToolStripMenuItem();
+    btnFormGrafico = new System.Windows.Forms.ToolStripMenuItem();
         menuStrip.SuspendLayout();
         SuspendLayout();
         // 
         // menuStrip
         // 
-    menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { btnForm2, btnForm3 });
+    menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { btnForm2, btnForm3, btnFormGrafico });
         menuStrip.Location = new System.Drawing.Point(0, 0);
     menuStrip.Name = "menuStrip";
         menuStrip.Size = new System.Drawing.Size(800, 24);
@@ -55,6 +56,12 @@ partial class Form1
     btnForm3.Name = "btnForm3";
     btnForm3.Size = new System.Drawing.Size(93, 20);
     btnForm3.Text = "Ver Estudiante";
+    // 
+    // btnFormGrafico
+    // 
+    btnFormGrafico.Name = "btnFormGrafico";
+    btnFormGrafico.Size = new System.Drawing.Size(90, 20);
+    btnFormGrafico.Text = "Ver Gráfico";
         // 
         // Form1
         // 
@@ -77,5 +84,6 @@ partial class Form1
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem btnForm2;
         private System.Windows.Forms.ToolStripMenuItem btnForm3;
+    private System.Windows.Forms.ToolStripMenuItem btnFormGrafico;
     #endregion
 }
