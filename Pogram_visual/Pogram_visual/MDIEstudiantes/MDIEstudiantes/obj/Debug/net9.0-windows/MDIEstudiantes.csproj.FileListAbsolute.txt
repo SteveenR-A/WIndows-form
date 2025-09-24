@@ -34,3 +34,9 @@ c:\Users\herna\Documents\c#\WIndows-form\Pogram_visual\Pogram_visual\MDIEstudian
 c:\Users\herna\Documents\c#\WIndows-form\Pogram_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\obj\Debug\net9.0-windows\MDIEstudiantes.pdb
 c:\Users\herna\Documents\c#\WIndows-form\Pogram_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\obj\Debug\net9.0-windows\MDIEstudiantes.genruntimeconfig.cache
 c:\Users\herna\Documents\c#\WIndows-form\Pogram_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\obj\Debug\net9.0-windows\ref\MDIEstudiantes.dll
+C:\Users\herna\Documents\c#\WIndows-form\Pogram_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\bin\Debug\net9.0-windows\System.Data.SqlClient.dll
+C:\Users\herna\Documents\c#\WIndows-form\Pogram_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\bin\Debug\net9.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\herna\Documents\c#\WIndows-form\Pogram_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\bin\Debug\net9.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\herna\Documents\c#\WIndows-form\Pogram_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\bin\Debug\net9.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\herna\Documents\c#\WIndows-form\Pogram_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\bin\Debug\net9.0-windows\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
+C:\Users\herna\Documents\c#\WIndows-form\Pogram_visual\Pogram_visual\MDIEstudiantes\MDIEstudiantes\bin\Debug\net9.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
