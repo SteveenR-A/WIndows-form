@@ -38,28 +38,56 @@ namespace OrdenamientoMultihilo
 
         private void RedibujarChart()
         {
+            // Asegurar que se ejecute en el hilo de la UI
             if (chartTiempos == null) return;
-            Bitmap bmp = new Bitmap(chartTiempos.Width, chartTiempos.Height);
-            using (Graphics g = Graphics.FromImage(bmp))
+            if (chartTiempos.InvokeRequired)
             {
-                g.Clear(System.Drawing.Color.WhiteSmoke);
-                int margin = 10;
-                int x = margin;
-                int w = Math.Max(40, (bmp.Width - margin * 2) / Math.Max(1, tiempos.Count));
-                long max = tiempos.Count > 0 ? tiempos.Values.Max() : 1;
-                foreach (var kv in tiempos)
-                {
-                    int h = (int)((kv.Value / (double)max) * (bmp.Height - margin * 2));
-                    Rectangle rect = new Rectangle(x, bmp.Height - margin - h, w - 5, h);
-                    g.FillRectangle(Brushes.SteelBlue, rect);
-                    g.DrawString(kv.Key, this.Font, Brushes.Black, x, 5);
-                    g.DrawString($"{kv.Value} ms", this.Font, Brushes.Black, x, bmp.Height - margin - h - 15);
-                    x += w;
-                }
+                try { chartTiempos.Invoke(new Action(RedibujarChart)); } catch { }
+                return;
             }
-            var old = chartTiempos.Image;
-            chartTiempos.Image = bmp;
-            try { old?.Dispose(); } catch { }
+
+            int width = Math.Max(1, chartTiempos.Width);
+            int height = Math.Max(1, chartTiempos.Height);
+
+            // Si las dimensiones son demasiado pequeñas (por ejemplo antes de mostrar el formulario), no dibujar
+            if (width <= 1 || height <= 1 || tiempos == null || tiempos.Count == 0)
+            {
+                // limpiar imagen previa si existe
+                try { chartTiempos.Image?.Dispose(); chartTiempos.Image = null; } catch { }
+                return;
+            }
+
+            Bitmap? bmp = null;
+            try
+            {
+                bmp = new Bitmap(width, height);
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    g.Clear(System.Drawing.Color.WhiteSmoke);
+                    int margin = 10;
+                    int x = margin;
+                    int w = Math.Max(40, (bmp.Width - margin * 2) / Math.Max(1, tiempos.Count));
+                    long max = tiempos.Count > 0 ? tiempos.Values.Max() : 1;
+                    foreach (var kv in tiempos)
+                    {
+                        int h = (int)((kv.Value / (double)max) * (bmp.Height - margin * 2));
+                        Rectangle rect = new Rectangle(x, bmp.Height - margin - h, Math.Max(1, w - 5), Math.Max(1, h));
+                        g.FillRectangle(Brushes.SteelBlue, rect);
+                        g.DrawString(kv.Key, this.Font, Brushes.Black, x, 5);
+                        g.DrawString($"{kv.Value} ms", this.Font, Brushes.Black, x, Math.Max(0, bmp.Height - margin - h - 15));
+                        x += w;
+                    }
+                }
+
+                var old = chartTiempos.Image;
+                chartTiempos.Image = bmp;
+                try { old?.Dispose(); } catch { }
+                // No dispose bmp aquí porque ahora lo usa PictureBox
+            }
+            catch
+            {
+                try { bmp?.Dispose(); } catch { }
+            }
         }
 
         public Form1()
