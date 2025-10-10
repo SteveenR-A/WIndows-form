@@ -16,6 +16,9 @@
     <IsPackable>false</IsPackable>
     <PublishRelease>false</PublishRelease>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.19.0" />
+  </ItemGroup>
 
   <PropertyGroup>
     <PublishDir>bin\Publish\$(Configuration)\$(TargetFramework)\$(RuntimeIdentifier)</PublishDir>
