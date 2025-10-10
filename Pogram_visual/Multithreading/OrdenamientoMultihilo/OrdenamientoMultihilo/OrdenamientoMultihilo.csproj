@@ -78,7 +78,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MultithreadingApp.Library\MultithreadingApp.Library.csproj" />
+    <ProjectReference Include="..\OrdenamientoMultihilo.Library\OrdenamientoMultihilo.Library.csproj" />
   </ItemGroup>
 
   <ItemGroup>

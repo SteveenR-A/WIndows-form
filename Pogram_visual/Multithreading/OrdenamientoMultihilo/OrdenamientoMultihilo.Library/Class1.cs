@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-namespace MultithreadingApp.Library
+namespace OrdenamientoMultihilo.Library
 {
     public static class Class1
     {

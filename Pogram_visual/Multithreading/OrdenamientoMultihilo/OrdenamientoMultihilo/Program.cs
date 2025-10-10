@@ -11,7 +11,7 @@ using System.Runtime;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace MultithreadingApp
+namespace OrdenamientoMultihilo
 {
     internal static class Program
     {

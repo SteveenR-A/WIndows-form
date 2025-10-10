@@ -1,4 +1,4 @@
-﻿namespace MultithreadingApp
+﻿namespace OrdenamientoMultihilo
 {
     partial class Form1
     {
@@ -109,7 +109,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblTitulo.Location = new System.Drawing.Point(100, 30);
+            this.lblTitulo.Location = new System.Drawing.Point(80, 30);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(320, 26);
             this.lblTitulo.TabIndex = 6;
@@ -130,7 +130,7 @@
             this.Controls.Add(this.btnGenerar);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Multithreading - Ordenamiento";
+            this.Text = "Ordenamiento Multihilo";
             this.ResumeLayout(false);
             this.PerformLayout();
         }
