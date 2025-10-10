@@ -1,19 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "lIQGphFNdDk=",
+  "dgSpecHash": "xZy1J2gRWhc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\herna\\Documents\\c#\\WIndows-form\\Pogram_visual\\Pogram_visual\\MDIEstudiantes\\MDIEstudiantes\\MDIEstudiantes.csproj",
+  "projectFilePath": "C:\\Users\\herna\\OneDrive\\Documents\\Documentos\\C#\\WIndows-form\\WIndows-form\\Pogram_visual\\Pogram_visual\\MDIEstudiantes\\MDIEstudiantes\\MDIEstudiantes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\herna\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\herna\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\herna\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\herna\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\herna\\.nuget\\packages\\system.data.sqlclient\\4.9.0\\system.data.sqlclient.4.9.0.nupkg.sha512",
-    "C:\\Users\\herna\\.nuget\\packages\\system.windows.forms.datavisualization\\1.0.0-prerelease.20110.1\\system.windows.forms.datavisualization.1.0.0-prerelease.20110.1.nupkg.sha512",
-    "C:\\Users\\herna\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.5\\microsoft.netcore.app.ref.9.0.5.nupkg.sha512",
-    "C:\\Users\\herna\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.5\\microsoft.windowsdesktop.app.ref.9.0.5.nupkg.sha512",
-    "C:\\Users\\herna\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.5\\microsoft.aspnetcore.app.ref.9.0.5.nupkg.sha512",
-    "C:\\Users\\herna\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\9.0.5\\microsoft.netcore.app.host.win-x64.9.0.5.nupkg.sha512"
+    "C:\\Users\\herna\\.nuget\\packages\\system.windows.forms.datavisualization\\1.0.0-prerelease.20110.1\\system.windows.forms.datavisualization.1.0.0-prerelease.20110.1.nupkg.sha512"
   ],
   "logs": []
 }
