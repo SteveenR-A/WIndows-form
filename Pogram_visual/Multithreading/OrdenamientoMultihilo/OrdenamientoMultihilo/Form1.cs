@@ -14,29 +14,39 @@ namespace OrdenamientoMultihilo
 {
     public partial class Form1 : Form
     {
-    // Variables globales para el multithreading
-    private List<int>? listaOriginal;
-    private List<int>? listaBurbuja;
-    private List<int>? listaQuick;
-    private List<int>? listaMerge;
-    private List<int>? listaSelection;
-    private Thread? hiloBurbuja;
+    // ---------- Comentarios generales ----------
+    // Este formulario contiene la interfaz para generar una lista de números aleatorios
+    // y ejecutar varios algoritmos de ordenamiento en paralelo (hilos y BackgroundWorkers).
+    // Las listas separadas permiten comparar tiempos de ejecución y mostrar trazas.
+
+    // Variables globales para los datos y las copias que usan los distintos algoritmos
+    private List<int>? listaOriginal;   // lista base generada por el usuario
+    private List<int>? listaBurbuja;    // copia para Burbuja
+    private List<int>? listaQuick;      // copia para QuickSort
+    private List<int>? listaMerge;      // copia para MergeSort
+    private List<int>? listaSelection;  // copia para SelectionSort
+    private Thread? hiloBurbuja;        // hilo manual usado para Burbuja
+
+    // Relojes para medir tiempos de cada algoritmo
     private Stopwatch relojBurbuja = new Stopwatch();
     private Stopwatch relojQuick = new Stopwatch();
     private Stopwatch relojMerge = new Stopwatch();
     private Stopwatch relojSelection = new Stopwatch();
 
-    // Cancelación para hilos
+    // Flags de cancelación para detener algoritmos en ejecución.
+    // 'volatile' garantiza visibilidad entre hilos.
     private volatile bool cancelarBurbuja = false;
     private volatile bool cancelarSelection = false;
 
-    // Para registrar iteraciones (limitadas)
+    // Tope para cuántas iteraciones guardamos cuando exportamos a Word (evita archivos enormes)
     private int maxIteracionesGuardar = 200; // limitar para Word
 
-        // Tiempos para visualización simple
-        private Dictionary<string, long> tiempos = new Dictionary<string, long>();
+    // Diccionario para almacenar tiempos de ejecución y dibujarlos en el chart
+    private Dictionary<string, long> tiempos = new Dictionary<string, long>();
 
-        private void RedibujarChart()
+    // Redibuja el chart (PictureBox) con barras que representan los tiempos medidos.
+    // Se asegura de ejecutarse en el hilo de la UI mediante Invoke cuando sea necesario.
+    private void RedibujarChart()
         {
             // Asegurar que se ejecute en el hilo de la UI
             if (chartTiempos == null) return;
@@ -90,13 +100,15 @@ namespace OrdenamientoMultihilo
             }
         }
 
+        // Constructor del formulario: inicializa componentes de la UI
         public Form1()
         {
             InitializeComponent();
         }
 
-        // Evento para generar datos aleatorios
-        private void btnGenerar_Click(object sender, EventArgs e)
+    // Evento para generar datos aleatorios
+    // Crea una lista de enteros aleatorios de la longitud indicada por numericCantidad
+    private void btnGenerar_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
             int cantidad = 100000;
@@ -126,8 +138,9 @@ namespace OrdenamientoMultihilo
             RedibujarChart();
         }
 
-        // Evento para iniciar los algoritmos de ordenamiento
-        private void btnIniciar_Click(object sender, EventArgs e)
+    // Evento para iniciar los algoritmos de ordenamiento
+    // Prepara copias de la lista original y arranca Burbuja en un Thread y los demás en BackgroundWorkers.
+    private void btnIniciar_Click(object sender, EventArgs e)
         {
             if (listaOriginal == null || listaOriginal.Count == 0)
             {
@@ -157,6 +170,7 @@ namespace OrdenamientoMultihilo
             lblQuickSort.Text = "QuickSort: Iniciando...";
 
             // Iniciar el hilo Burbuja usando Thread
+            // Uso de Thread aquí para demostrar manejo clásico de hilos. El hilo actualizará la UI mediante Invoke.
             cancelarBurbuja = false;
             hiloBurbuja = new Thread(new ThreadStart(OrdenarBurbuja));
             hiloBurbuja.Start();
@@ -178,8 +192,9 @@ namespace OrdenamientoMultihilo
             }
         }
 
-        // Algoritmo de ordenamiento Burbuja usando Thread y delegados
-        private void OrdenarBurbuja()
+    // Algoritmo de ordenamiento Burbuja ejecutado en un hilo separado.
+    // Actualiza la UI con Invoke para reportar progreso y trazas de swaps.
+    private void OrdenarBurbuja()
         {
             relojBurbuja.Restart();
             if (listaBurbuja == null || listaBurbuja.Count == 0)
@@ -245,8 +260,8 @@ namespace OrdenamientoMultihilo
             }
         }
 
-        // SelectionSort (puede cancelarse)
-        private void SelectionSort(List<int> lista)
+    // SelectionSort (puede cancelarse usando la flag cancelarSelection)
+    private void SelectionSort(List<int> lista)
         {
             if (lista == null || lista.Count == 0) return;
             int n = lista.Count;
@@ -271,8 +286,9 @@ namespace OrdenamientoMultihilo
             }
         }
 
-        // Método principal de QuickSort
-        private void QuickSort(List<int> lista, int izquierda, int derecha, BackgroundWorker worker, int totalElementos)
+    // Método principal de QuickSort (recursivo)
+    // Usa el BackgroundWorker para reportar progreso parcial a la UI.
+    private void QuickSort(List<int> lista, int izquierda, int derecha, BackgroundWorker worker, int totalElementos)
         {
             if (izquierda < derecha)
             {
@@ -281,7 +297,7 @@ namespace OrdenamientoMultihilo
                 QuickSort(lista, pivot + 1, derecha, worker, totalElementos);
             }
 
-            // Reportar progreso periódicamente
+            // Reportar progreso periódicamente (método aproximado para no llamar ReportProgress en cada recursión)
             if (derecha % 5000 == 0 && derecha > 0)
             {
                 int progreso = (int)((derecha / (float)totalElementos) * 100);
@@ -289,8 +305,8 @@ namespace OrdenamientoMultihilo
             }
         }
 
-        // MergeSort (reporta progreso sencillo)
-        private void MergeSort(List<int> lista, int left, int right, BackgroundWorker worker, int total)
+    // MergeSort recursivo. Después del merge parcial reporta progreso aproximado.
+    private void MergeSort(List<int> lista, int left, int right, BackgroundWorker worker, int total)
         {
             if (left >= right) return;
             int mid = (left + right) / 2;
@@ -308,7 +324,7 @@ namespace OrdenamientoMultihilo
             while (j <= right) temp.Add(lista[j++]);
             for (int k = 0; k < temp.Count; k++) lista[left + k] = temp[k];
 
-            // Reportar progreso aproximado
+            // Reportar progreso aproximado para actualizar la UI
             if (worker != null && (right - left) % Math.Max(1, total / 20) == 0)
             {
                 int progreso = (int)((right / (float)total) * 100);
@@ -342,8 +358,9 @@ namespace OrdenamientoMultihilo
             return i + 1;
         }
 
-        // Evento DoWork del BackgroundWorker
-        private void backgroundWorkerQuickSort_DoWork(object sender, DoWorkEventArgs e)
+    // Evento DoWork del BackgroundWorker para QuickSort: se ejecuta en un hilo del pool
+    // y no bloquea la UI. El resultado se envía en e.Result.
+    private void backgroundWorkerQuickSort_DoWork(object sender, DoWorkEventArgs e)
         {
             relojQuick.Restart();
 
