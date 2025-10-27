@@ -34,6 +34,10 @@
             this.progressQuickSort = new System.Windows.Forms.ProgressBar();
             this.lblBurbuja = new System.Windows.Forms.Label();
             this.lblQuickSort = new System.Windows.Forms.Label();
+            this.lblMergeSort = new System.Windows.Forms.Label();
+            this.lblSelectionSort = new System.Windows.Forms.Label();
+            this.progressMergeSort = new System.Windows.Forms.ProgressBar();
+            this.progressSelectionSort = new System.Windows.Forms.ProgressBar();
             this.backgroundWorkerQuickSort = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerMergeSort = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerSelectionSort = new System.ComponentModel.BackgroundWorker();
@@ -108,6 +112,42 @@
             this.lblQuickSort.TabIndex = 5;
             this.lblQuickSort.Text = "QuickSort: 0%";
             // 
+            // lblMergeSort
+            // 
+            this.lblMergeSort.AutoSize = true;
+            this.lblMergeSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblMergeSort.Location = new System.Drawing.Point(30, 220);
+            this.lblMergeSort.Name = "lblMergeSort";
+            this.lblMergeSort.Size = new System.Drawing.Size(92, 17);
+            this.lblMergeSort.TabIndex = 5;
+            this.lblMergeSort.Text = "MergeSort: 0%";
+            // 
+            // lblSelectionSort
+            // 
+            this.lblSelectionSort.AutoSize = true;
+            this.lblSelectionSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblSelectionSort.Location = new System.Drawing.Point(30, 270);
+            this.lblSelectionSort.Name = "lblSelectionSort";
+            this.lblSelectionSort.Size = new System.Drawing.Size(102, 17);
+            this.lblSelectionSort.TabIndex = 5;
+            this.lblSelectionSort.Text = "SelectionSort: 0%";
+            // 
+            // progressMergeSort
+            // 
+            this.progressMergeSort.Location = new System.Drawing.Point(30, 240);
+            this.progressMergeSort.Name = "progressMergeSort";
+            this.progressMergeSort.Size = new System.Drawing.Size(640, 22);
+            this.progressMergeSort.TabIndex = 3;
+            this.progressMergeSort.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            // 
+            // progressSelectionSort
+            // 
+            this.progressSelectionSort.Location = new System.Drawing.Point(30, 290);
+            this.progressSelectionSort.Name = "progressSelectionSort";
+            this.progressSelectionSort.Size = new System.Drawing.Size(640, 22);
+            this.progressSelectionSort.TabIndex = 3;
+            this.progressSelectionSort.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            // 
             // backgroundWorkerQuickSort
             // 
             this.backgroundWorkerQuickSort.WorkerReportsProgress = true;
@@ -177,7 +217,7 @@
             // 
             // chartTiempos
             // 
-            this.chartTiempos.Location = new System.Drawing.Point(30, 230);
+            this.chartTiempos.Location = new System.Drawing.Point(30, 330);
             this.chartTiempos.Name = "chartTiempos";
             this.chartTiempos.Size = new System.Drawing.Size(640, 280);
             this.chartTiempos.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -186,14 +226,14 @@
             // 
             // listBoxBurbuja
             // 
-            this.listBoxBurbuja.Location = new System.Drawing.Point(700, 230);
+            this.listBoxBurbuja.Location = new System.Drawing.Point(700, 140);
             this.listBoxBurbuja.Name = "listBoxBurbuja";
             this.listBoxBurbuja.Size = new System.Drawing.Size(300, 120);
             this.listBoxBurbuja.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             // 
             // listBoxQuick
             // 
-            this.listBoxQuick.Location = new System.Drawing.Point(700, 360);
+            this.listBoxQuick.Location = new System.Drawing.Point(700, 270);
             this.listBoxQuick.Name = "listBoxQuick";
             this.listBoxQuick.Size = new System.Drawing.Size(300, 120);
             this.listBoxQuick.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
@@ -203,11 +243,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1020, 540);
+            this.ClientSize = new System.Drawing.Size(1020, 640);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblQuickSort);
+            this.Controls.Add(this.lblMergeSort);
+            this.Controls.Add(this.lblSelectionSort);
             this.Controls.Add(this.lblBurbuja);
             this.Controls.Add(this.progressQuickSort);
+            this.Controls.Add(this.progressMergeSort);
+            this.Controls.Add(this.progressSelectionSort);
             this.Controls.Add(this.progressBurbuja);
             this.Controls.Add(this.btnIniciar);
             this.Controls.Add(this.btnGenerar);
@@ -232,6 +276,10 @@
         private System.Windows.Forms.ProgressBar progressQuickSort;
         private System.Windows.Forms.Label lblBurbuja;
         private System.Windows.Forms.Label lblQuickSort;
+        private System.Windows.Forms.Label lblMergeSort;
+        private System.Windows.Forms.Label lblSelectionSort;
+        private System.Windows.Forms.ProgressBar progressMergeSort;
+        private System.Windows.Forms.ProgressBar progressSelectionSort;
         private System.ComponentModel.BackgroundWorker backgroundWorkerQuickSort;
     private System.ComponentModel.BackgroundWorker backgroundWorkerMergeSort;
     private System.ComponentModel.BackgroundWorker backgroundWorkerSelectionSort;

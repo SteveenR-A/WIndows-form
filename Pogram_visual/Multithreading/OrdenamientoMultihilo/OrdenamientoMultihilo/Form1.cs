@@ -132,6 +132,11 @@ namespace OrdenamientoMultihilo
             progressQuickSort.Value = 0;
             lblBurbuja.Text = "Burbuja: 0%";
             lblQuickSort.Text = "QuickSort: 0%";
+            // reset adicionales para nuevos algoritmos
+            progressMergeSort.Value = 0;
+            progressSelectionSort.Value = 0;
+            lblMergeSort.Text = "MergeSort: 0%";
+            lblSelectionSort.Text = "SelectionSort: 0%";
             // reset adicionales
             lblCantidad.Text = $"Cantidad: {listaOriginal.Count}";
             tiempos.Clear();
@@ -168,6 +173,10 @@ namespace OrdenamientoMultihilo
             progressQuickSort.Value = 0;
             lblBurbuja.Text = "Burbuja: Iniciando...";
             lblQuickSort.Text = "QuickSort: Iniciando...";
+            // Iniciar etiquetas para nuevos algoritmos
+            lblMergeSort.Text = "MergeSort: Iniciando...";
+            lblSelectionSort.Text = "SelectionSort: Iniciando...";
+
 
             // Iniciar el hilo Burbuja usando Thread
             // Uso de Thread aquí para demostrar manejo clásico de hilos. El hilo actualizará la UI mediante Invoke.
@@ -212,6 +221,10 @@ namespace OrdenamientoMultihilo
             int iteracionesGuardadas = 0;
             for (int i = 0; i < n - 1; i++)
             {
+                if (cancelarBurbuja)
+                {
+                    break; // Salir del bucle exterior si se cancela
+                }
                 for (int j = 0; j < n - i - 1; j++)
                 {
                     if (cancelarBurbuja) { goto FIN_BURBUJA; }
@@ -244,20 +257,26 @@ namespace OrdenamientoMultihilo
                 }
             }
 
+        FIN_BURBUJA:;
             relojBurbuja.Stop();
             
             // Actualizar UI al completarse
             this.Invoke(new Action(() =>
             {
-                progressBurbuja.Value = 100;
-                lblBurbuja.Text = $"Burbuja: Completado en {relojBurbuja.ElapsedMilliseconds} ms";
+                if (cancelarBurbuja)
+                {
+                    lblBurbuja.Text = "Burbuja: Cancelado";
+                }
+                else
+                {
+                    progressBurbuja.Value = 100;
+                    lblBurbuja.Text = $"Burbuja: Completado en {relojBurbuja.ElapsedMilliseconds} ms";
+                    tiempos["BubbleSort"] = relojBurbuja.ElapsedMilliseconds;
+                    RedibujarChart();
+                    // Guardar en Word
+                    try { SaveIterationsToWord("BubbleSort", listBoxBurbuja.Items.Cast<object>().Select(x => x.ToString() ?? "").ToList()); } catch { }
+                }
             }));
-            FIN_BURBUJA:;
-            // Si se canceló, marcar en etiqueta
-            if (cancelarBurbuja)
-            {
-                this.Invoke(new Action(() => lblBurbuja.Text = "Burbuja: Cancelado"));
-            }
         }
 
     // SelectionSort (puede cancelarse usando la flag cancelarSelection)
@@ -268,7 +287,15 @@ namespace OrdenamientoMultihilo
             int iterGuardadas = 0;
             for (int i = 0; i < n - 1; i++)
             {
-                if (cancelarSelection) return;
+                if (cancelarSelection)
+                {
+                    // Si se cancela, el RunWorkerCompleted se encargará del mensaje
+                    return;
+                }
+
+                // Reportar progreso
+                int progreso = (int)((i / (float)n) * 100);
+                backgroundWorkerSelectionSort.ReportProgress(Math.Min(progreso, 100));
                 int minIdx = i;
                 for (int j = i + 1; j < n; j++)
                 {
@@ -290,6 +317,12 @@ namespace OrdenamientoMultihilo
     // Usa el BackgroundWorker para reportar progreso parcial a la UI.
     private void QuickSort(List<int> lista, int izquierda, int derecha, BackgroundWorker worker, int totalElementos)
         {
+            // Aunque la cancelación no está habilitada para QuickSort en el diseñador,
+            // es buena práctica comprobarlo si el worker lo soportara.
+            if (worker.CancellationPending)
+            {
+                return;
+            }
             if (izquierda < derecha)
             {
                 int pivot = Particionar(lista, izquierda, derecha);
@@ -308,6 +341,11 @@ namespace OrdenamientoMultihilo
     // MergeSort recursivo. Después del merge parcial reporta progreso aproximado.
     private void MergeSort(List<int> lista, int left, int right, BackgroundWorker worker, int total)
         {
+            if (worker.CancellationPending)
+            {
+                return;
+            }
+
             if (left >= right) return;
             int mid = (left + right) / 2;
             MergeSort(lista, left, mid, worker, total);
@@ -393,17 +431,22 @@ namespace OrdenamientoMultihilo
 
         private void backgroundWorkerMergeSort_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            // usar progressQuickSort para representar merge (UI simplificada)
-            progressQuickSort.Value = Math.Min(e.ProgressPercentage, 100);
-            lblQuickSort.Text = $"MergeSort: {e.ProgressPercentage}%";
+            progressMergeSort.Value = Math.Min(e.ProgressPercentage, 100);
+            lblMergeSort.Text = $"MergeSort: {e.ProgressPercentage}%";
         }
 
         private void backgroundWorkerMergeSort_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (e.Error != null) MessageBox.Show($"Error Merge: {e.Error.Message}");
+            if (e.Error != null) { MessageBox.Show($"Error Merge: {e.Error.Message}"); lblMergeSort.Text = "MergeSort: Error"; }
+            else if (e.Cancelled)
+            {
+
+                lblMergeSort.Text = "MergeSort: Cancelado";
+            }
             else
             {
-                lblQuickSort.Text = $"MergeSort: Completado en {relojMerge.ElapsedMilliseconds} ms";
+                lblMergeSort.Text = $"MergeSort: Completado en {relojMerge.ElapsedMilliseconds} ms";
+                progressMergeSort.Value = 100;
                 tiempos["MergeSort"] = relojMerge.ElapsedMilliseconds;
                 RedibujarChart();
             }
@@ -423,15 +466,21 @@ namespace OrdenamientoMultihilo
 
         private void backgroundWorkerSelectionSort_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            // No usado actualmente
+            progressSelectionSort.Value = Math.Min(e.ProgressPercentage, 100);
+            lblSelectionSort.Text = $"SelectionSort: {e.ProgressPercentage}%";
         }
 
         private void backgroundWorkerSelectionSort_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (e.Error != null) MessageBox.Show($"Error Selection: {e.Error.Message}");
+            if (e.Error != null) { MessageBox.Show($"Error Selection: {e.Error.Message}"); lblSelectionSort.Text = "SelectionSort: Error"; }
+            else if (e.Cancelled)
+            {
+                lblSelectionSort.Text = "SelectionSort: Cancelado";
+            }
             else
             {
-                // actualizar chart
+                lblSelectionSort.Text = $"SelectionSort: Completado en {relojSelection.ElapsedMilliseconds} ms";
+                progressSelectionSort.Value = 100;
                 tiempos["SelectionSort"] = relojSelection.ElapsedMilliseconds;
                 RedibujarChart();
             }
@@ -451,6 +500,10 @@ namespace OrdenamientoMultihilo
             {
                 MessageBox.Show($"Error en QuickSort: {e.Error.Message}", "Error", 
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (e.Cancelled) // Aunque no se usa, es buena práctica manejarlo
+            {
+                lblQuickSort.Text = "QuickSort: Cancelado";
             }
             else
             {
