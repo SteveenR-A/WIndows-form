@@ -48,10 +48,6 @@
             this.listBoxBurbuja = new System.Windows.Forms.ListBox();
             this.listBoxQuick = new System.Windows.Forms.ListBox();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnOrdenar = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.numCantidad = new System.Windows.Forms.NumericUpDown();
-            this.lblCantidad = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnGenerar
@@ -66,6 +62,26 @@
             this.btnGenerar.Text = "Generar Datos";
             this.btnGenerar.UseVisualStyleBackColor = false;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblCantidad.Location = new System.Drawing.Point(30, 30);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(140, 17);
+            this.lblCantidad.TabIndex = 20;
+            this.lblCantidad.Text = "Cantidad de números:";
+            // 
+            // numericCantidad
+            // 
+            this.numericCantidad.Location = new System.Drawing.Point(180, 30);
+            this.numericCantidad.Name = "numericCantidad";
+            this.numericCantidad.Size = new System.Drawing.Size(120, 20);
+            this.numericCantidad.TabIndex = 21;
+            this.numericCantidad.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            this.numericCantidad.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            this.numericCantidad.Value = new decimal(new int[] { 100000, 0, 0, 0 });
             // 
             // btnIniciar
             // 
@@ -242,42 +258,20 @@
             this.listBoxQuick.Size = new System.Drawing.Size(300, 120);
             this.listBoxQuick.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             // 
-            // btnOrdenar
+            // (btnOrdenar removed)
             // 
-            this.btnOrdenar.BackColor = System.Drawing.Color.LightYellow;
-            this.btnOrdenar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnOrdenar.Location = new System.Drawing.Point(620, 60);
-            this.btnOrdenar.Name = "btnOrdenar";
-            this.btnOrdenar.Size = new System.Drawing.Size(120, 38);
-            this.btnOrdenar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left;
-            this.btnOrdenar.TabIndex = 8;
-            this.btnOrdenar.Text = "Ordenar";
-            this.btnOrdenar.UseVisualStyleBackColor = false;
-            this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click);
+            // (btnLimpiar removed)
             // 
-            // btnLimpiar
+            // numericCantidad
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.LightGray;
-            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLimpiar.Location = new System.Drawing.Point(760, 60);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(120, 38);
-            this.btnLimpiar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left;
-            this.btnLimpiar.TabIndex = 9;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // numCantidad
-            // 
-            this.numCantidad.Location = new System.Drawing.Point(120, 60);
-            this.numCantidad.Minimum = new decimal(new int[] { 1000, 0, 0, 0 });
-            this.numCantidad.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-            this.numCantidad.Increment = new decimal(new int[] { 1000, 0, 0, 0 });
-            this.numCantidad.Value = new decimal(new int[] { 100000, 0, 0, 0 });
-            this.numCantidad.Name = "numCantidad";
-            this.numCantidad.Size = new System.Drawing.Size(120, 23);
-            this.numCantidad.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left;
+            this.numericCantidad.Location = new System.Drawing.Point(120, 60);
+            this.numericCantidad.Minimum = new decimal(new int[] { 1000, 0, 0, 0 });
+            this.numericCantidad.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            this.numericCantidad.Increment = new decimal(new int[] { 1000, 0, 0, 0 });
+            this.numericCantidad.Value = new decimal(new int[] { 100000, 0, 0, 0 });
+            this.numericCantidad.Name = "numericCantidad";
+            this.numericCantidad.Size = new System.Drawing.Size(120, 23);
+            this.numericCantidad.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left;
             // 
             // lblCantidad
             // 
@@ -310,8 +304,7 @@
             this.Controls.Add(this.chartTiempos);
             this.Controls.Add(this.listBoxBurbuja);
             this.Controls.Add(this.listBoxQuick);
-            this.Controls.Add(this.btnOrdenar);
-            this.Controls.Add(this.btnLimpiar);
+            // removed btnOrdenar and btnLimpiar
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ordenamiento Multihilo";
@@ -340,10 +333,6 @@
     private System.Windows.Forms.PictureBox chartTiempos;
     private System.Windows.Forms.ListBox listBoxBurbuja;
     private System.Windows.Forms.ListBox listBoxQuick;
-        private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button btnOrdenar;
-        private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.NumericUpDown numCantidad;
-        private System.Windows.Forms.Label lblCantidad;
+    private System.Windows.Forms.Label lblTitulo;
     }
 }

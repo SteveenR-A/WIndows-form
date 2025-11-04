@@ -9,6 +9,7 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System.IO;
 using System.Drawing;
+using Microsoft.VisualBasic; // for Interaction.InputBox
 
 namespace OrdenamientoMultihilo
 {
@@ -110,21 +111,39 @@ namespace OrdenamientoMultihilo
     // Crea una lista de enteros aleatorios de la longitud indicada por numericCantidad
     private void btnGenerar_Click(object sender, EventArgs e)
         {
-            Random rnd = new Random();
-            int cantidad = 100000;
-            try
+            // Pedir la cantidad al usuario mediante un diálogo
+            string defaultValue = "100000";
+            try { defaultValue = numericCantidad?.Value.ToString() ?? defaultValue; } catch { }
+            string input = Interaction.InputBox("Introduce la cantidad de números a generar:", "Cantidad", defaultValue);
+            if (string.IsNullOrWhiteSpace(input))
             {
-                cantidad = (int)numericCantidad.Value;
+                // Usuario canceló o dejó vacío: no generar
+                return;
             }
-            catch { }
+            if (!int.TryParse(input, out int cantidad) || cantidad < 1)
+            {
+                MessageBox.Show("Cantidad inválida. Introduce un número entero mayor que 0.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            listaOriginal = new List<int>();
+            // Limpiar datos y UI antes de generar nuevos números
+            LimpiarTodo();
 
-            // Generar 'cantidad' números aleatorios
+            // Generar una nueva lista de números aleatorios
+            Random rand = new Random();
+            listaOriginal = new List<int>(cantidad);
             for (int i = 0; i < cantidad; i++)
-                listaOriginal.Add(rnd.Next(0, 1000000));
+            {
+                listaOriginal.Add(rand.Next(1, 100001));
+            }
 
-            MessageBox.Show("Lista generada correctamente con 100,000 números.", "Datos Generados", 
+            // Copiar la lista original a las listas de cada algoritmo
+            listaBurbuja = new List<int>(listaOriginal);
+            listaQuick = new List<int>(listaOriginal);
+            listaMerge = new List<int>(listaOriginal);
+            listaSelection = new List<int>(listaOriginal);
+
+            MessageBox.Show($"Lista generada correctamente con {cantidad} números.", "Datos Generados", 
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             
             // Resetear las barras de progreso
@@ -141,6 +160,7 @@ namespace OrdenamientoMultihilo
             lblCantidad.Text = $"Cantidad: {listaOriginal.Count}";
             tiempos.Clear();
             RedibujarChart();
+            try { btnIniciar.Enabled = true; } catch { }
         }
 
     // Evento para iniciar los algoritmos de ordenamiento
@@ -200,6 +220,50 @@ namespace OrdenamientoMultihilo
                 backgroundWorkerSelectionSort.RunWorkerAsync(listaSelection);
             }
         }
+
+        // Limpia datos y restablece la interfaz a su estado inicial
+        private void LimpiarTodo()
+        {
+            try
+            {
+                // Cancelar hilo si está corriendo
+                cancelarBurbuja = true;
+                try { hiloBurbuja?.Join(50); } catch { }
+
+                listaOriginal = null;
+                listaBurbuja = null;
+                listaQuick = null;
+                listaMerge = null;
+                listaSelection = null;
+
+                // Limpiar ListBoxes
+                try { listBoxBurbuja.Items.Clear(); } catch { }
+                try { listBoxQuick.Items.Clear(); } catch { }
+
+                // Resetear barras y etiquetas
+                try { progressBurbuja.Value = 0; } catch { }
+                try { progressQuickSort.Value = 0; } catch { }
+                try { progressMergeSort.Value = 0; } catch { }
+                try { progressSelectionSort.Value = 0; } catch { }
+                try { lblBurbuja.Text = "Burbuja: 0%"; } catch { }
+                try { lblQuickSort.Text = "QuickSort: 0%"; } catch { }
+                try { lblMergeSort.Text = "MergeSort: 0%"; } catch { }
+                try { lblSelectionSort.Text = "SelectionSort: 0%"; } catch { }
+
+                // Limpiar chart
+                try { chartTiempos.Image?.Dispose(); chartTiempos.Image = null; } catch { }
+                tiempos.Clear();
+
+                // Actualizar etiqueta de cantidad
+                try { lblCantidad.Text = "Cantidad: 0"; } catch { }
+
+                // Deshabilitar botones hasta generar nuevos datos
+                try { btnIniciar.Enabled = false; } catch { }
+            }
+            catch { }
+        }
+
+        // (Se eliminaron los handlers de btnLimpiar y btnOrdenar porque esos botones fueron removidos del diseñador)
 
     // Algoritmo de ordenamiento Burbuja ejecutado en un hilo separado.
     // Actualiza la UI con Invoke para reportar progreso y trazas de swaps.
@@ -445,10 +509,17 @@ namespace OrdenamientoMultihilo
             }
             else
             {
-                lblMergeSort.Text = $"MergeSort: Completado en {relojMerge.ElapsedMilliseconds} ms";
-                progressMergeSort.Value = 100;
-                tiempos["MergeSort"] = relojMerge.ElapsedMilliseconds;
-                RedibujarChart();
+                try
+                {
+                    lblMergeSort.Text = $"MergeSort: Completado en {relojMerge.ElapsedMilliseconds} ms";
+                    progressMergeSort.Value = 100;
+                    tiempos["MergeSort"] = relojMerge.ElapsedMilliseconds;
+                    RedibujarChart();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error actualizando UI tras MergeSort: {ex.Message}", "Error UI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -507,12 +578,19 @@ namespace OrdenamientoMultihilo
             }
             else
             {
-                lblQuickSort.Text = $"QuickSort: Completado en {relojQuick.ElapsedMilliseconds} ms";
-                progressQuickSort.Value = 100;
-                tiempos["QuickSort"] = relojQuick.ElapsedMilliseconds;
-                RedibujarChart();
-                // Guardar en Word (trazas limitadas)
-                try { SaveIterationsToWord("QuickSort", listBoxQuick.Items.Cast<object>().Select(x => x.ToString() ?? "").ToList()); } catch { }
+                try
+                {
+                    lblQuickSort.Text = $"QuickSort: Completado en {relojQuick.ElapsedMilliseconds} ms";
+                    progressQuickSort.Value = 100;
+                    tiempos["QuickSort"] = relojQuick.ElapsedMilliseconds;
+                    RedibujarChart();
+                    // Guardar en Word (trazas limitadas)
+                    try { SaveIterationsToWord("QuickSort", listBoxQuick.Items.Cast<object>().Select(x => x.ToString() ?? "").ToList()); } catch { }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error actualizando UI tras QuickSort: {ex.Message}", "Error UI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
