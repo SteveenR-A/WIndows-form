@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v9.0": {
       "Practica6App/1.0.0": {
         "dependencies": {
-          "MySql.Data": "9.5.0"
+          "MySql.Data": "9.5.0",
+          "System.Configuration.ConfigurationManager": "8.0.0"
         },
         "runtime": {
           "Practica6App.dll": {}

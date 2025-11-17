@@ -27,3 +27,4 @@ c:\Users\vboxuser\Documents\WIndows-form\Pogram_visual\Conexion base de datos\Pr
 c:\Users\vboxuser\Documents\WIndows-form\Pogram_visual\Conexion base de datos\Practica6App\obj\Debug\net9.0-windows\Practica6App.pdb
 c:\Users\vboxuser\Documents\WIndows-form\Pogram_visual\Conexion base de datos\Practica6App\obj\Debug\net9.0-windows\Practica6App.genruntimeconfig.cache
 c:\Users\vboxuser\Documents\WIndows-form\Pogram_visual\Conexion base de datos\Practica6App\obj\Debug\net9.0-windows\ref\Practica6App.dll
+c:\Users\vboxuser\Documents\WIndows-form\Pogram_visual\Conexion base de datos\Practica6App\bin\Debug\net9.0-windows\Practica6App.dll.config
