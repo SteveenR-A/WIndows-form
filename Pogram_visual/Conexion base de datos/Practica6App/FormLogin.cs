@@ -13,28 +13,31 @@ namespace Practica6App
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            // Ajusta la cadena de conexión según tu entorno
-            string cx = "server=localhost;database=bd_login;uid=root;pwd=1234;";
-            if (BD_SetGet.EstablecerConexion(cx))
+            // Usar la cadena desde app.config y métodos parametrizados
+            if (!BD_SetGet.EstablecerConexionDesdeConfig("MySqlLoginConnection"))
+                return;
+
+            string usuario = txtUsuario.Text?.Trim() ?? string.Empty;
+            string clave = txtClave.Text ?? string.Empty;
+
+            string sql = "SELECT * FROM tb_login WHERE usuario = @u AND clave = @p";
+            var pars = new System.Collections.Generic.Dictionary<string, object>
             {
-                string usuario = txtUsuario.Text;
-                string clave = txtClave.Text;
+                { "@u", usuario },
+                { "@p", clave }
+            };
 
-                // NOTA: Este ejemplo usa la misma construcción que compartiste.
-                // En un paso posterior podemos parametrizar la consulta para mayor seguridad.
-                string sql = $"SELECT * FROM tb_login WHERE usuario='{usuario}' AND clave='{clave}'";
-                DataTable dt = BD_SetGet.EjecutarOrdenSelect(sql);
+            DataTable dt = BD_SetGet.EjecutarOrdenSelect(sql, pars);
 
-                if (dt != null && dt.Rows.Count > 0)
-                {
-                    FormPrincipal frm = new FormPrincipal(usuario);
-                    frm.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Usuario o clave incorrectos", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                FormPrincipal frm = new FormPrincipal(usuario);
+                frm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o clave incorrectos", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

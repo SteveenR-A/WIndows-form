@@ -15,27 +15,33 @@ namespace Practica6App
 
         private void btnCambiar_Click(object sender, EventArgs e)
         {
-            string cx = "server=localhost;database=bd_login;uid=root;pwd=1234;";
-            if (BD_SetGet.EstablecerConexion(cx))
+            if (!BD_SetGet.EstablecerConexionDesdeConfig("MySqlLoginConnection"))
+                return;
+
+            string actual = txtActual.Text ?? string.Empty;
+            string nueva = txtNueva.Text ?? string.Empty;
+            string repetir = txtRepetir.Text ?? string.Empty;
+
+            if (nueva != repetir)
             {
-                string actual = txtActual.Text;
-                string nueva = txtNueva.Text;
-                string repetir = txtRepetir.Text;
-
-                if (nueva != repetir)
-                {
-                    MessageBox.Show("Las contraseñas no coinciden.");
-                    return;
-                }
-
-                string sql = $"UPDATE tb_login SET clave='{nueva}' WHERE usuario='{usuario}' AND clave='{actual}'";
-                int filas = BD_SetGet.EjecutarOrden(sql);
-
-                if (filas > 0)
-                    MessageBox.Show("Contraseña actualizada.");
-                else
-                    MessageBox.Show("Error al actualizar. Verifique su contraseña actual.");
+                MessageBox.Show("Las contraseñas no coinciden.");
+                return;
             }
+
+            string sql = "UPDATE tb_login SET clave = @nueva WHERE usuario = @usuario AND clave = @actual";
+            var pars = new System.Collections.Generic.Dictionary<string, object>
+            {
+                { "@nueva", nueva },
+                { "@usuario", usuario },
+                { "@actual", actual }
+            };
+
+            int filas = BD_SetGet.EjecutarOrden(sql, pars);
+
+            if (filas > 0)
+                MessageBox.Show("Contraseña actualizada.");
+            else
+                MessageBox.Show("Error al actualizar. Verifique su contraseña actual.");
         }
     }
 }
