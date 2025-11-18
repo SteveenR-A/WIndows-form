@@ -104,9 +104,9 @@
             // 
             this.cbxCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCodigo.FormattingEnabled = true;
-            this.cbxCodigo.Location = new System.Drawing.Point(22, 75);
+            this.cbxCodigo.Location = new System.Drawing.Point(22, 45);
             this.cbxCodigo.Name = "cbxCodigo";
-            this.cbxCodigo.Size = new System.Drawing.Size(171, 32);
+            this.cbxCodigo.Size = new System.Drawing.Size(200, 32);
             this.cbxCodigo.TabIndex = 0;
             this.cbxCodigo.SelectedIndexChanged += new System.EventHandler(this.cbxCodigo_SelectedIndexChanged);
             // 
@@ -122,18 +122,18 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-4, 156);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 130);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 176);
+            this.dataGridView1.Size = new System.Drawing.Size(770, 240);
             this.dataGridView1.TabIndex = 2;
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(328, 11);
+            this.groupBox1.Location = new System.Drawing.Point(250, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(449, 123);
+            this.groupBox1.Size = new System.Drawing.Size(520, 100);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Operaciones";
@@ -141,7 +141,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 376);
+            this.label2.Location = new System.Drawing.Point(520, 380);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 24);
             this.label2.TabIndex = 4;
@@ -150,9 +150,9 @@
             // LbTotal
             // 
             this.LbTotal.BackColor = System.Drawing.Color.Silver;
-            this.LbTotal.Location = new System.Drawing.Point(126, 376);
+            this.LbTotal.Location = new System.Drawing.Point(605, 376);
             this.LbTotal.Name = "LbTotal";
-            this.LbTotal.Size = new System.Drawing.Size(187, 34);
+            this.LbTotal.Size = new System.Drawing.Size(175, 34);
             this.LbTotal.TabIndex = 5;
             this.LbTotal.Click += new System.EventHandler(this.LbTotal_Click);
             // 
@@ -177,7 +177,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(48, 187);
+            this.label5.Location = new System.Drawing.Point(48, 150);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(149, 20);
             this.label5.TabIndex = 2;
@@ -187,9 +187,9 @@
             // 
             this.groupBox2.Controls.Add(this.btGuardar);
             this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 238);
+            this.groupBox2.Location = new System.Drawing.Point(12, 190);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(783, 178);
+            this.groupBox2.Size = new System.Drawing.Size(768, 220);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Seleccione los productos e ingrese la cantidad";
@@ -197,16 +197,16 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(8, 28);
+            this.dataGridView2.Location = new System.Drawing.Point(8, 22);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(521, 134);
+            this.dataGridView2.Size = new System.Drawing.Size(740, 160);
             this.dataGridView2.TabIndex = 0;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(221, 186);
+            this.dateTimePicker1.Location = new System.Drawing.Point(221, 150);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(336, 26);
             this.dateTimePicker1.TabIndex = 4;
@@ -215,7 +215,7 @@
             // 
             this.tbxNombreC.Location = new System.Drawing.Point(204, 110);
             this.tbxNombreC.Name = "tbxNombreC";
-            this.tbxNombreC.Size = new System.Drawing.Size(287, 26);
+            this.tbxNombreC.Size = new System.Drawing.Size(420, 26);
             this.tbxNombreC.TabIndex = 5;
             // 
             // tbxCodigoFac
@@ -227,9 +227,9 @@
             // 
             // btGuardar
             // 
-            this.btGuardar.Location = new System.Drawing.Point(625, 83);
+            this.btGuardar.Location = new System.Drawing.Point(660, 165);
             this.btGuardar.Name = "btGuardar";
-            this.btGuardar.Size = new System.Drawing.Size(90, 43);
+            this.btGuardar.Size = new System.Drawing.Size(108, 44);
             this.btGuardar.TabIndex = 7;
             this.btGuardar.Text = "Guardar";
             this.btGuardar.UseVisualStyleBackColor = true;

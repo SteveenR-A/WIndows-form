@@ -8,10 +8,11 @@ USE bd_login;
 CREATE TABLE tb_login (
   id INT AUTO_INCREMENT PRIMARY KEY,
   usuario VARCHAR(100) NOT NULL UNIQUE,
-  clave VARCHAR(255) NOT NULL
+  clave VARCHAR(255) NOT NULL,
+  nombre VARCHAR(200) DEFAULT NULL
 );
 
 -- Usuario de ejemplo (contraseña en texto plano para pruebas)
-INSERT INTO tb_login (usuario, clave) VALUES ('admin','1234');
+INSERT INTO tb_login (usuario, clave, nombre) VALUES ('admin','1234','Administrador');
 
 -- Recomendación: almacenar hashes (bcrypt) en producción en lugar de contraseñas en texto plano.

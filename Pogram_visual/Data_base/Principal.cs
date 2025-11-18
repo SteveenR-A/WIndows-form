@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 using System.Windows.Forms;
 
 namespace Data_base
@@ -22,9 +23,19 @@ namespace Data_base
             CargarProductosCatalogo();
         }
 
+        private string GetVentasConnectionString()
+        {
+            var cs = ConfigurationManager.ConnectionStrings["SqlServerVentasConnection"]?.ConnectionString;
+            if (string.IsNullOrEmpty(cs))
+            {
+                return "Data Source=localhost\\SQLEXPRESS;Initial Catalog=bd_ventas;Integrated Security=True;";
+            }
+            return cs;
+        }
+
         private void CargarCodigosCatalogo()
         {
-            string connectionString = "Server=DESKTOP-ANMUUFA\\SQLEXPRESS03;Database=bd_ventas;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
+            string connectionString = GetVentasConnectionString();
             string query = "SELECT Codigo FROM Catalogo ORDER BY Codigo";
 
             cbxCodigo.Items.Clear();
@@ -50,6 +61,10 @@ namespace Data_base
                 else
                     MessageBox.Show("Tabla Catalogo vacía o sin resultados.");
             }
+            catch (SqlException sx)
+            {
+                MessageBox.Show($"Error SQL al cargar códigos (Number={sx.Number}): {sx.Message}", "Conexión Fallida");
+            }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}", "Conexión Fallida");
@@ -60,16 +75,18 @@ namespace Data_base
         {
             if (cbxCodigo.SelectedItem != null)
             {
-                int codigoSeleccionado = int.Parse(cbxCodigo.SelectedItem.ToString());
+                string codigoSeleccionado = cbxCodigo.SelectedItem.ToString();
                 CargarProductosPorCodigo(codigoSeleccionado);
                 CalcularTotal(codigoSeleccionado);
             }
         }
 
-        private void CargarProductosPorCodigo(int codigo)
+        private void CargarProductosPorCodigo(string codigo)
         {
-            string connectionString = "Server=DESKTOP-ANMUUFA\\SQLEXPRESS03;Database=bd_ventas;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
-            string query = "SELECT * FROM Producto WHERE Codigo = @Codigo";
+            string connectionString = GetVentasConnectionString();
+            string query = "SELECT p.Id, c.Codigo, c.Nombre, p.PrecioUnitario AS Precio, p.Cantidad "
+                         + "FROM Producto p INNER JOIN Catalogo c ON p.CatalogoId = c.Id "
+                         + "WHERE c.Codigo = @Codigo";
 
             try
             {
@@ -85,16 +102,22 @@ namespace Data_base
                     dataGridView1.DataSource = tabla;
                 }
             }
+            catch (SqlException sx)
+            {
+                MessageBox.Show($"Error SQL al cargar productos (Number={sx.Number}): {sx.Message}", "Error");
+            }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al cargar productos: {ex.Message}", "Error");
             }
         }
 
-        private void CalcularTotal(int codigo)
+        private void CalcularTotal(string codigo)
         {
-            string connectionString = "Server=DESKTOP-ANMUUFA\\SQLEXPRESS03;Database=bd_ventas;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
-            string query = "SELECT SUM(Precio * Cantidad) FROM Producto WHERE Codigo = @Codigo";
+            string connectionString = GetVentasConnectionString();
+            string query = "SELECT SUM(p.PrecioUnitario * p.Cantidad) "
+                         + "FROM Producto p INNER JOIN Catalogo c ON p.CatalogoId = c.Id "
+                         + "WHERE c.Codigo = @Codigo";
 
             try
             {
@@ -118,6 +141,10 @@ namespace Data_base
                     }
                 }
             }
+            catch (SqlException sx)
+            {
+                MessageBox.Show($"Error SQL al calcular total (Number={sx.Number}): {sx.Message}", "Error");
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al calcular total: " + ex.Message);
@@ -138,7 +165,7 @@ namespace Data_base
 
         private void CargarProductosCatalogo()
         {
-            string connectionString = "Server=DESKTOP-ANMUUFA\\SQLEXPRESS03;Database=bd_ventas;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
+            string connectionString = GetVentasConnectionString();
             string query = "SELECT Codigo, Nombre, Precio FROM Catalogo";
 
             try
@@ -162,6 +189,10 @@ namespace Data_base
                     dataGridView2.Columns["Cantidad"].HeaderText = "Cantidad a comprar";
                 }
             }
+            catch (SqlException sx)
+            {
+                MessageBox.Show($"Error SQL al cargar productos del catálogo (Number={sx.Number}): {sx.Message}", "Error");
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar productos del catálogo: " + ex.Message);
@@ -170,17 +201,17 @@ namespace Data_base
 
         private void btGuardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(tbxCodigoFac.Text) || string.IsNullOrWhiteSpace(tbxNombreC.Text))
+            // Requerir al menos el nombre del cliente
+            if (string.IsNullOrWhiteSpace(tbxNombreC.Text))
             {
-                MessageBox.Show("Debe llenar los campos de factura (Código y Cliente).");
+                MessageBox.Show("Debe llenar el campo Cliente.");
                 return;
             }
 
-            int codigoFactura = int.Parse(tbxCodigoFac.Text);
             string cliente = tbxNombreC.Text.Trim();
-            string fecha = dateTimePicker1.Value.ToString("dd-MM-yyyy");
+            string fecha = dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss");
 
-            string connectionString = "Server=DESKTOP-ANMUUFA\\SQLEXPRESS03;Database=bd_ventas;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
+            string connectionString = GetVentasConnectionString();
 
             try
             {
@@ -188,44 +219,101 @@ namespace Data_base
                 {
                     connection.Open();
 
-                    // Insertar factura
-                    string queryFactura = "INSERT INTO Factura (Codigo, Cliente, Fecha) VALUES (@Codigo, @Cliente, @Fecha)";
-                    using (SqlCommand cmdFactura = new SqlCommand(queryFactura, connection))
+                    // Usar transacción para insertar factura y productos de forma atómica
+                    using (SqlTransaction tx = connection.BeginTransaction())
                     {
-                        cmdFactura.Parameters.AddWithValue("@Codigo", codigoFactura);
-                        cmdFactura.Parameters.AddWithValue("@Cliente", cliente);
-                        cmdFactura.Parameters.AddWithValue("@Fecha", fecha);
-                        cmdFactura.ExecuteNonQuery();
-                    }
-
-                    // Insertar productos seleccionados
-                    foreach (DataGridViewRow row in dataGridView2.Rows)
-                    {
-                        if (row.Cells["Cantidad"].Value != null &&
-                            int.TryParse(row.Cells["Cantidad"].Value.ToString(), out int cantidad) &&
-                            cantidad > 0)
+                        try
                         {
-                            int codigo = Convert.ToInt32(row.Cells["Codigo"].Value);
-                            string nombre = row.Cells["Nombre"].Value.ToString();
-                            double precio = Convert.ToDouble(row.Cells["Precio"].Value);
-
-                            string queryProducto = "INSERT INTO Producto (Codigo, Nombre, Precio, Cantidad, Fk_Codigo) VALUES (@Codigo, @Nombre, @Precio, @Cantidad, @Fk)";
-                            using (SqlCommand cmdProducto = new SqlCommand(queryProducto, connection))
+                            // Insertar factura y obtener su Id (IDENTITY)
+                            string queryFactura = "INSERT INTO Factura (Fecha, Cliente, Total) VALUES (@Fecha, @Cliente, @Total); SELECT SCOPE_IDENTITY();";
+                            int facturaId;
+                            using (SqlCommand cmdFactura = new SqlCommand(queryFactura, connection, tx))
                             {
-                                cmdProducto.Parameters.AddWithValue("@Codigo", codigo);
-                                cmdProducto.Parameters.AddWithValue("@Nombre", nombre);
-                                cmdProducto.Parameters.AddWithValue("@Precio", precio);
-                                cmdProducto.Parameters.AddWithValue("@Cantidad", cantidad);
-                                cmdProducto.Parameters.AddWithValue("@Fk", codigoFactura);
-                                cmdProducto.ExecuteNonQuery();
+                                cmdFactura.Parameters.AddWithValue("@Fecha", fecha);
+                                cmdFactura.Parameters.AddWithValue("@Cliente", cliente);
+                                cmdFactura.Parameters.AddWithValue("@Total", 0);
+                                object res = cmdFactura.ExecuteScalar();
+                                facturaId = Convert.ToInt32(res);
                             }
+
+                            // Insertar productos seleccionados. Se asume que dataGridView2 tiene columnas: Codigo, Nombre, Precio, Cantidad
+                            decimal totalFactura = 0m;
+
+                            foreach (DataGridViewRow row in dataGridView2.Rows)
+                            {
+                                if (row.Cells["Cantidad"].Value != null &&
+                                    int.TryParse(row.Cells["Cantidad"].Value.ToString(), out int cantidad) &&
+                                    cantidad > 0)
+                                {
+                                    string codigoCatalogo = row.Cells["Codigo"].Value?.ToString();
+                                    if (string.IsNullOrWhiteSpace(codigoCatalogo))
+                                        continue;
+
+                                    // Obtener Catalogo.Id y precio unitario desde la tabla Catalogo (usar la misma conexión y transacción)
+                                    int catalogoId = -1;
+                                    decimal precioUnitario = 0m;
+                                    string selCatalogo = "SELECT Id, Precio FROM Catalogo WHERE Codigo = @Codigo";
+                                    using (SqlCommand cmdSel = new SqlCommand(selCatalogo, connection, tx))
+                                    {
+                                        cmdSel.Parameters.AddWithValue("@Codigo", codigoCatalogo);
+                                        using (SqlDataReader rdr = cmdSel.ExecuteReader())
+                                        {
+                                            if (rdr.Read())
+                                            {
+                                                catalogoId = rdr.GetInt32(rdr.GetOrdinal("Id"));
+                                                precioUnitario = rdr.GetDecimal(rdr.GetOrdinal("Precio"));
+                                            }
+                                        }
+                                    }
+
+                                    if (catalogoId == -1)
+                                    {
+                                        // Si no existe el catalogo para ese codigo, saltarlo
+                                        continue;
+                                    }
+
+                                    // Insertar producto con referencias normalizadas
+                                    string insertProducto = "INSERT INTO Producto (FacturaId, CatalogoId, Cantidad, PrecioUnitario) VALUES (@FacturaId, @CatalogoId, @Cantidad, @PrecioUnitario)";
+                                    using (SqlCommand cmdIns = new SqlCommand(insertProducto, connection, tx))
+                                    {
+                                        cmdIns.Parameters.AddWithValue("@FacturaId", facturaId);
+                                        cmdIns.Parameters.AddWithValue("@CatalogoId", catalogoId);
+                                        cmdIns.Parameters.AddWithValue("@Cantidad", cantidad);
+                                        cmdIns.Parameters.AddWithValue("@PrecioUnitario", precioUnitario);
+                                        cmdIns.ExecuteNonQuery();
+                                    }
+
+                                    totalFactura += precioUnitario * cantidad;
+                                }
+                            }
+
+                            // Actualizar total de la factura
+                            string updFactura = "UPDATE Factura SET Total = @Total WHERE Id = @Id";
+                            using (SqlCommand cmdUpd = new SqlCommand(updFactura, connection, tx))
+                            {
+                                cmdUpd.Parameters.AddWithValue("@Total", totalFactura);
+                                cmdUpd.Parameters.AddWithValue("@Id", facturaId);
+                                cmdUpd.ExecuteNonQuery();
+                            }
+
+                            // Commit si todo salió bien
+                            tx.Commit();
+
+                            MessageBox.Show("Factura y productos guardados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            dataGridView2.DataSource = null;
+                            CargarProductosCatalogo();
+                        }
+                        catch (Exception)
+                        {
+                            try { tx.Rollback(); } catch { }
+                            throw;
                         }
                     }
-
-                    MessageBox.Show("Factura y productos guardados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dataGridView2.DataSource = null;
-                    CargarProductosCatalogo();
                 }
+            }
+            catch (SqlException sx)
+            {
+                MessageBox.Show($"Error SQL al guardar la factura (Number={sx.Number}): {sx.Message}", "Error al Guardar");
             }
             catch (Exception ex)
             {

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("mysql_exec")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc39a69139a220b8e9eb2c2d5a3d4311a7b03c99")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b86654a33d50ec48eee5fd54c52d69bdac6ad3a9")]
 [assembly: System.Reflection.AssemblyProductAttribute("mysql_exec")]
 [assembly: System.Reflection.AssemblyTitleAttribute("mysql_exec")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

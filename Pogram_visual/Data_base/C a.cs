@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Configuration;
+using MySql.Data.MySqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -33,7 +34,12 @@ namespace Data_base
 
         private void btnGuard_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=DESKTOP-ANMUUFA\\SQLEXPRESS03;Database=bd_login;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
+            var cs = ConfigurationManager.ConnectionStrings["MySqlLoginConnection"]?.ConnectionString;
+            if (string.IsNullOrEmpty(cs))
+            {
+                MessageBox.Show("La cadena de conexión 'MySqlLoginConnection' no está configurada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             string antigua = txbContra.Text.Trim();
             string nueva = txbContraN.Text.Trim();
@@ -54,18 +60,19 @@ namespace Data_base
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (var connection = new MySqlConnection(cs))
                 {
                     connection.Open();
 
-
                     string verificarQuery = "SELECT COUNT(*) FROM tb_login WHERE usuario = @usuario AND clave = @antigua";
-                    using (SqlCommand cmdVerificar = new SqlCommand(verificarQuery, connection))
+                    using (var cmdVerificar = new MySqlCommand(verificarQuery, connection))
                     {
                         cmdVerificar.Parameters.AddWithValue("@usuario", usuarioActual);
                         cmdVerificar.Parameters.AddWithValue("@antigua", antigua);
 
-                        int existe = (int)cmdVerificar.ExecuteScalar();
+                        var existeObj = cmdVerificar.ExecuteScalar();
+                        int existe = 0;
+                        if (existeObj != null && int.TryParse(existeObj.ToString(), out int parsed)) existe = parsed;
 
                         if (existe == 0)
                         {
@@ -74,9 +81,8 @@ namespace Data_base
                         }
                     }
 
-
                     string actualizarQuery = "UPDATE tb_login SET clave = @nueva WHERE usuario = @usuario";
-                    using (SqlCommand cmdActualizar = new SqlCommand(actualizarQuery, connection))
+                    using (var cmdActualizar = new MySqlCommand(actualizarQuery, connection))
                     {
                         cmdActualizar.Parameters.AddWithValue("@nueva", nueva);
                         cmdActualizar.Parameters.AddWithValue("@usuario", usuarioActual);

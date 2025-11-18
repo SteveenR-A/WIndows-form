@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 using System.Windows.Forms;
 
 namespace Data_base
@@ -9,7 +10,16 @@ namespace Data_base
     {
         private SqlDataAdapter dataAdapterCatalogo;
         private DataTable dataTableCatalogo;
-        private const string VENTAS_CONNECTION_STRING = "Server=DESKTOP-ANMUUFA\\SQLEXPRESS03;Database=bd_ventas;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
+        private string GetVentasConnectionString()
+        {
+            var cs = ConfigurationManager.ConnectionStrings["SqlServerVentasConnection"]?.ConnectionString;
+            if (string.IsNullOrEmpty(cs))
+            {
+                // Fallback a una cadena por defecto si no está en App.config
+                return "Data Source=localhost\\SQLEXPRESS;Initial Catalog=bd_ventas;Integrated Security=True;";
+            }
+            return cs;
+        }
 
         public catalogo()
         {
@@ -27,7 +37,8 @@ namespace Data_base
 
             try
             {
-                dataAdapterCatalogo = new SqlDataAdapter(selectQuery, VENTAS_CONNECTION_STRING);
+                var ventasCs = GetVentasConnectionString();
+                dataAdapterCatalogo = new SqlDataAdapter(selectQuery, ventasCs);
                 dataTableCatalogo = new DataTable();
 
                 SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapterCatalogo);
@@ -39,6 +50,10 @@ namespace Data_base
                 dataGridView1.ReadOnly = false;
                 dataGridView1.AllowUserToAddRows = true;
                 dataGridView1.Columns["Codigo"].ReadOnly = false;
+            }
+            catch (SqlException sx)
+            {
+                MessageBox.Show($"Error SQL al cargar el Catálogo (Number={sx.Number}): {sx.Message}", "Error CRUD");
             }
             catch (Exception ex)
             {

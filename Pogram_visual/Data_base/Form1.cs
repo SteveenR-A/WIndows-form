@@ -30,39 +30,24 @@ namespace Data_base
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=DESKTOP-ANMUUFA\\SQLEXPRESS03;Database=bd_login;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
             string usuario = txbUsuario.Text.Trim();
             string contrasena = txbContraseña.Text.Trim();
 
-            string query = "SELECT nombre FROM tb_login WHERE usuario = @usuario AND clave = @contrasena";
-
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(query, connection))
+                var repo = new LoginRepository();
+                var nombre = repo.GetNombreIfValid(usuario, contrasena);
+
+                if (!string.IsNullOrEmpty(nombre))
                 {
-                    command.Parameters.AddWithValue("@usuario", usuario);
-                    command.Parameters.AddWithValue("@contrasena", contrasena);
+                    MessageBox.Show($"¡Bienvenido al sistema, {nombre}!", "Acceso correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    connection.Open();
-
-                    object resultado = command.ExecuteScalar();
-
-                    if (resultado != null)
-                    {
-                        string nombre = resultado.ToString();
-
-                        MessageBox.Show($"¡Bienvenido al sistema, {nombre}!", "Acceso correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-                        Gestion_de_facturas gestion_De_Facturas = new Gestion_de_facturas(usuario, nombre);
-                        gestion_De_Facturas.Show();
-                       
-                    }
-                    else
-                    {
-                        MessageBox.Show("Usuario o contraseña incorrectos.", "Error de Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    Gestion_de_facturas gestion_De_Facturas = new Gestion_de_facturas(usuario, nombre);
+                    gestion_De_Facturas.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos.", "Error de Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
