@@ -1,0 +1,16 @@
+C:\Users\Joeymir\source\repos\Data_base\Data_base\bin\Debug\Data_base.exe.config
+C:\Users\Joeymir\source\repos\Data_base\Data_base\bin\Debug\Data_base.exe
+C:\Users\Joeymir\source\repos\Data_base\Data_base\bin\Debug\Data_base.pdb
+C:\Users\Joeymir\source\repos\Data_base\Data_base\obj\Debug\Data_base.csproj.AssemblyReference.cache
+C:\Users\Joeymir\source\repos\Data_base\Data_base\obj\Debug\Data_base.Form1.resources
+C:\Users\Joeymir\source\repos\Data_base\Data_base\obj\Debug\Data_base.Principal.resources
+C:\Users\Joeymir\source\repos\Data_base\Data_base\obj\Debug\Data_base.Properties.Resources.resources
+C:\Users\Joeymir\source\repos\Data_base\Data_base\obj\Debug\Data_base.csproj.GenerateResource.cache
+C:\Users\Joeymir\source\repos\Data_base\Data_base\obj\Debug\Data_base.csproj.CoreCompileInputs.cache
+C:\Users\Joeymir\source\repos\Data_base\Data_base\obj\Debug\Data_base.exe
+C:\Users\Joeymir\source\repos\Data_base\Data_base\obj\Debug\Data_base.pdb
+C:\Users\Joeymir\source\repos\Data_base\Data_base\obj\Debug\Data_base.exe.config
+C:\Users\Joeymir\source\repos\Data_base\Data_base\obj\Debug\Data_base.Gestion_De_facturas.resources
+C:\Users\Joeymir\source\repos\Data_base\Data_base\obj\Debug\Data_base.C_a.resources
+C:\Users\Joeymir\source\repos\Data_base\Data_base\obj\Debug\Data_base.catalogo.resources
+C:\Users\Joeymir\source\repos\Data_base\Data_base\obj\Debug\Data_base.Acerca_de.resources
